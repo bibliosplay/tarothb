@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarot del Jardín de las Delicias</title>
-<meta name="description" content="Mazo de tarot interactivo inspirado en las criaturas de Hieronymus Bosch, con manual y tres tipos de tirada.">
+<meta name="description" content="Mazo de tarot interactivo de 78 cartas inspirado en las criaturas de Hieronymus Bosch, con manual y tres tipos de tirada.">
 <meta name="theme-color" content="#14100c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314100c'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23d9a63e' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23d9a63e'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
@@ -15,7 +15,7 @@
 
 <header class="site-header">
   <h1 class="site-title">Tarot del Jardín de las Delicias</h1>
-  <p class="site-subtitle">Veintidós criaturas nacidas a la sombra de Hieronymus Bosch, para leer lo que el día trae escondido.</p>
+  <p class="site-subtitle">Setenta y ocho criaturas nacidas a la sombra de Hieronymus Bosch, para leer lo que el día trae escondido.</p>
 </header>
 
 <nav class="tabs" role="tablist" aria-label="Secciones">
@@ -32,13 +32,26 @@
   <!-- ===================== MANUAL ===================== -->
   <section id="panel-manual" class="panel is-active" role="tabpanel" aria-labelledby="tab-manual manual-heading" tabindex="0">
     <h2 class="section-heading" id="manual-heading">Manual del mazo</h2>
-    <p class="section-lede">Este mazo reinterpreta los 22 Arcanos Mayores como criaturas de un jardín imaginario, imposible y un poco perturbador, en la tradición visual del Bosco. No es un mazo tradicional de 78 cartas: se concentra en los Arcanos Mayores, los que hablan de fuerzas grandes y lecciones de fondo.</p>
+    <p class="section-lede">Este mazo reinterpreta los 78 Arcanos del tarot tradicional — los 22 Arcanos Mayores y los 56 Arcanos Menores de Copas, Bastos, Espadas y Oros — como criaturas de un jardín imaginario, imposible y un poco perturbador, en la tradición visual del Bosco.</p>
 
     <div class="manual-grid">
       <details class="manual-item" open>
         <summary>¿Qué son los Arcanos Mayores?</summary>
         <div class="manual-body">
           <p>Son 22 cartas numeradas del 0 al 21 que representan arquetipos: etapas, fuerzas y encrucijadas que atraviesa cualquier vida — el comienzo, la elección, la caída, la sanación, el cierre de un ciclo. Cada una tiene, además del nombre clásico del tarot, un nombre bosquiano y una criatura propia que la ilustra.</p>
+        </div>
+      </details>
+
+      <details class="manual-item">
+        <summary>¿Qué son los Arcanos Menores?</summary>
+        <div class="manual-body">
+          <p>Son 56 cartas divididas en cuatro palos de 14 cartas cada uno, del As al 10 más cuatro figuras (Sota, Caballero, Reina, Rey). Hablan de lo cotidiano: el trabajo, los vínculos, las decisiones chicas que van armando el día a día.</p>
+          <ul>
+            <li><strong>Copas · Copas del Estanque:</strong> emociones y vínculos.</li>
+            <li><strong>Bastos · Varas del Vergel:</strong> voluntad, creatividad y acción.</li>
+            <li><strong>Espadas · Espadas del Aire:</strong> pensamiento, conflicto y verdad.</li>
+            <li><strong>Oros · Frutos de la Tierra:</strong> lo material, el trabajo y el cuerpo.</li>
+          </ul>
         </div>
       </details>
 
@@ -58,6 +71,7 @@
         <div class="manual-body">
           <p>En la pestaña <strong>Hacer una Tirada</strong>:</p>
           <ul>
+            <li>Elegí si querés tirar solo con los Arcanos Mayores (22 cartas) o con el mazo completo (78 cartas, incluye Copas, Bastos, Espadas y Oros).</li>
             <li>Elegí uno de los tres tipos de tirada según lo que quieras explorar.</li>
             <li>Si querés, escribí la pregunta o el tema que tenés en mente — es solo para vos, no se guarda en ningún lado.</li>
             <li>Tocá "Mezclar y sacar cartas" para que el mazo elija por vos.</li>
@@ -77,7 +91,7 @@
       <details class="manual-item">
         <summary>Explorar el mazo completo</summary>
         <div class="manual-body">
-          <p>En la pestaña <strong>El Mazo</strong> podés recorrer las 22 cartas libremente, tocar cualquiera para ver su criatura, su historia y sus dos significados — al derecho e invertida — sin necesidad de hacer una tirada.</p>
+          <p>En la pestaña <strong>El Mazo</strong> podés recorrer las 78 cartas libremente, filtrar por palo, y tocar cualquiera para ver su criatura, su historia y sus dos significados — al derecho e invertida — sin necesidad de hacer una tirada.</p>
         </div>
       </details>
     </div>
@@ -85,8 +99,9 @@
 
   <!-- ===================== MAZO ===================== -->
   <section id="panel-mazo" class="panel" role="tabpanel" aria-labelledby="tab-mazo mazo-heading" tabindex="0">
-    <h2 class="section-heading" id="mazo-heading">Las 22 criaturas</h2>
-    <p class="section-lede">Tocá cualquier carta para conocer su historia y sus dos lecturas posibles.</p>
+    <h2 class="section-heading" id="mazo-heading">Las 78 criaturas</h2>
+    <p class="section-lede">Los 22 Arcanos Mayores y los 56 Arcanos Menores — Copas, Bastos, Espadas y Oros. Tocá cualquier carta para conocer su historia y sus dos lecturas posibles.</p>
+    <div class="deck-filters" id="deck-filters"></div>
     <div class="deck-grid" id="deck-grid"></div>
   </section>
 
@@ -94,6 +109,8 @@
   <section id="panel-tirada" class="panel" role="tabpanel" aria-labelledby="tab-tirada tirada-heading" tabindex="0">
     <h2 class="section-heading" id="tirada-heading">Elegí una tirada</h2>
     <p class="section-lede">Cada tirada sirve para un tipo distinto de pregunta.</p>
+
+    <div class="deck-mode-select" id="deck-mode-select"></div>
 
     <div class="spread-select" id="spread-select"></div>
 

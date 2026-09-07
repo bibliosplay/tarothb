@@ -2,7 +2,7 @@
   "meta": {
     "deck_name": "Tarot del Jardín de las Delicias",
     "author": "Inspirado en el universo de Hieronymus Bosch (1450–1516)",
-    "note": "Interpretación original de los 22 Arcanos Mayores a través de criaturas y escenas de estilo bosquiano. No reproduce obras existentes; es una relectura simbólica."
+    "note": "Interpretación original de los 78 Arcanos (22 Mayores y 56 Menores) a través de criaturas y escenas de estilo bosquiano. No reproduce obras existentes; es una relectura simbólica."
   },
   "majorArcana": [
     {
@@ -10,264 +10,2056 @@
       "number": "0",
       "name": "El Loco",
       "boschName": "El Peregrino Alado",
-      "palette": ["#e8c874", "#4a5d3a", "#1a1410"],
+      "palette": [
+        "#e8c874",
+        "#4a5d3a",
+        "#1a1410"
+      ],
       "creature": "Un caminante de piernas de zancuda y sombrero de embudo, que avanza al borde de un acantilado sin mirar el vacío. Un pequeño demonio con alas de polilla tira de su capa.",
-      "keywordsUp": ["comienzos", "inocencia", "salto de fe", "espontaneidad"],
-      "keywordsRev": ["imprudencia", "dispersión", "riesgo insensato"],
+      "keywordsUp": [
+        "comienzos",
+        "inocencia",
+        "salto de fe",
+        "espontaneidad"
+      ],
+      "keywordsRev": [
+        "imprudencia",
+        "dispersión",
+        "riesgo insensato"
+      ],
       "meaningUp": "Un umbral se abre. Es momento de dar el primer paso aunque el camino no esté trazado del todo; la ingenuidad, aquí, es una forma de valentía.",
-      "meaningRev": "El impulso se ha vuelto ruido. Antes de saltar conviene mirar una sola vez hacia abajo y preguntar qué se está evitando pensar."
+      "meaningRev": "El impulso se ha vuelto ruido. Antes de saltar conviene mirar una sola vez hacia abajo y preguntar qué se está evitando pensar.",
+      "arcana": "major"
     },
     {
       "id": 1,
       "number": "I",
       "name": "El Mago",
       "boschName": "El Alquimista del Embudo",
-      "palette": ["#c94f2f", "#e8c874", "#2b1810"],
+      "palette": [
+        "#c94f2f",
+        "#e8c874",
+        "#2b1810"
+      ],
       "creature": "Sobre una mesa de feria, un hombrecillo de sombrero puntiagudo hace girar cuatro objetos —copa, moneda, cuchillo y vara— mientras un pez con patas lo observa desde el suelo.",
-      "keywordsUp": ["voluntad", "recursos", "manifestación", "habilidad"],
-      "keywordsRev": ["manipulación", "potencial desperdiciado", "trucos vacíos"],
+      "keywordsUp": [
+        "voluntad",
+        "recursos",
+        "manifestación",
+        "habilidad"
+      ],
+      "keywordsRev": [
+        "manipulación",
+        "potencial desperdiciado",
+        "trucos vacíos"
+      ],
       "meaningUp": "Todos los elementos ya están sobre la mesa. Lo que falta no es una herramienta nueva, sino la decisión de usar las que ya tienes.",
-      "meaningRev": "Hay talento, pero se dispersa en juegos de manos. Cuidado con confundir el ingenio con el engaño, propio o ajeno."
+      "meaningRev": "Hay talento, pero se dispersa en juegos de manos. Cuidado con confundir el ingenio con el engaño, propio o ajeno.",
+      "arcana": "major"
     },
     {
       "id": 2,
       "number": "II",
       "name": "La Sacerdotisa",
       "boschName": "La Sibila del Fruto de Cristal",
-      "palette": ["#3a4a5d", "#8fa8b8", "#0f1a20"],
+      "palette": [
+        "#3a4a5d",
+        "#8fa8b8",
+        "#0f1a20"
+      ],
       "creature": "Sentada dentro de una esfera de vidrio flotante, una figura serena sostiene una fruta que refleja constelaciones enteras. No habla; su silencio es la respuesta.",
-      "keywordsUp": ["intuición", "misterio", "saber interior", "quietud"],
-      "keywordsRev": ["secretos no escuchados", "desconexión", "silencio forzado"],
+      "keywordsUp": [
+        "intuición",
+        "misterio",
+        "saber interior",
+        "quietud"
+      ],
+      "keywordsRev": [
+        "secretos no escuchados",
+        "desconexión",
+        "silencio forzado"
+      ],
       "meaningUp": "La respuesta que buscas no está afuera. Detente, deja de preguntar en voz alta y escucha lo que ya sabes desde antes de preguntar.",
-      "meaningRev": "Te estás ignorando a ti mismo. Algo susurra desde hace tiempo y ha sido tapado por el ruido o por miedo a lo que dice."
+      "meaningRev": "Te estás ignorando a ti mismo. Algo susurra desde hace tiempo y ha sido tapado por el ruido o por miedo a lo que dice.",
+      "arcana": "major"
     },
     {
       "id": 3,
       "number": "III",
       "name": "La Emperatriz",
       "boschName": "La Dama del Jardín Floreciente",
-      "palette": ["#4a7a3a", "#e8c874", "#1a2410"],
+      "palette": [
+        "#4a7a3a",
+        "#e8c874",
+        "#1a2410"
+      ],
       "creature": "Rodeada de frutos desmesurados y pájaros de pico largo que anidan en su cabello, una figura abundante hace crecer todo lo que toca, incluso lo que no debería crecer tan rápido.",
-      "keywordsUp": ["abundancia", "fertilidad", "creatividad", "cuidado"],
-      "keywordsRev": ["sobreabundancia", "dependencia", "creatividad bloqueada"],
+      "keywordsUp": [
+        "abundancia",
+        "fertilidad",
+        "creatividad",
+        "cuidado"
+      ],
+      "keywordsRev": [
+        "sobreabundancia",
+        "dependencia",
+        "creatividad bloqueada"
+      ],
       "meaningUp": "Algo que cuidaste está listo para florecer. Permite que crezca a su ritmo natural; no necesita que lo fuerces más.",
-      "meaningRev": "Se ha dado demasiado, o se ha dejado crecer algo sin límites. La abundancia sin cauce también agota."
+      "meaningRev": "Se ha dado demasiado, o se ha dejado crecer algo sin límites. La abundancia sin cauce también agota.",
+      "arcana": "major"
     },
     {
       "id": 4,
       "number": "IV",
       "name": "El Emperador",
       "boschName": "El Señor de Armadura de Hueso",
-      "palette": ["#6b6b6b", "#c94f2f", "#1a1a1a"],
+      "palette": [
+        "#6b6b6b",
+        "#c94f2f",
+        "#1a1a1a"
+      ],
       "creature": "Una armadura hecha de huesos blanqueados sostiene un cetro de metal frío. No hay rostro visible bajo el yelmo, solo la certeza de una orden que se cumplirá.",
-      "keywordsUp": ["estructura", "autoridad", "disciplina", "estabilidad"],
-      "keywordsRev": ["rigidez", "control excesivo", "autoritarismo"],
+      "keywordsUp": [
+        "estructura",
+        "autoridad",
+        "disciplina",
+        "estabilidad"
+      ],
+      "keywordsRev": [
+        "rigidez",
+        "control excesivo",
+        "autoritarismo"
+      ],
       "meaningUp": "Se necesita una estructura clara para que lo demás sostenga peso. Pon límites, ordena, decide: la firmeza aquí no es crueldad.",
-      "meaningRev": "El control se volvió jaula. Cuando la forma importa más que la vida que contiene, algo tiene que ceder."
+      "meaningRev": "El control se volvió jaula. Cuando la forma importa más que la vida que contiene, algo tiene que ceder.",
+      "arcana": "major"
     },
     {
       "id": 5,
       "number": "V",
       "name": "El Sumo Sacerdote",
       "boschName": "El Predicador de Pico de Ave",
-      "palette": ["#8a6d3a", "#d4a84a", "#241a0f"],
+      "palette": [
+        "#8a6d3a",
+        "#d4a84a",
+        "#241a0f"
+      ],
       "creature": "Con máscara de ave y libro de páginas en blanco, oficia un rito ante una fila de criaturas atentas. Nadie está seguro de si predica sabiduría o solo repite lo aprendido.",
-      "keywordsUp": ["tradición", "guía", "aprendizaje formal", "pertenencia"],
-      "keywordsRev": ["dogma", "conformismo", "cuestionar la autoridad"],
+      "keywordsUp": [
+        "tradición",
+        "guía",
+        "aprendizaje formal",
+        "pertenencia"
+      ],
+      "keywordsRev": [
+        "dogma",
+        "conformismo",
+        "cuestionar la autoridad"
+      ],
       "meaningUp": "Hay valor en aprender de quien ya recorrió el camino. Busca una guía, una estructura de sentido compartida, un maestro.",
-      "meaningRev": "La doctrina dejó de servir para pensar por uno mismo. Es momento de cuestionar la regla en vez de repetirla."
+      "meaningRev": "La doctrina dejó de servir para pensar por uno mismo. Es momento de cuestionar la regla en vez de repetirla.",
+      "arcana": "major"
     },
     {
       "id": 6,
       "number": "VI",
       "name": "Los Enamorados",
       "boschName": "Los Amantes bajo la Fresa Gigante",
-      "palette": ["#c94f6b", "#e8c874", "#2b1424"],
+      "palette": [
+        "#c94f6b",
+        "#e8c874",
+        "#2b1424"
+      ],
       "creature": "Dos figuras se resguardan bajo una fresa del tamaño de una casa, mientras aves y peces imposibles rodean su refugio improvisado. El mundo es extraño, pero están juntos en él.",
-      "keywordsUp": ["unión", "elección", "valores compartidos", "atracción"],
-      "keywordsRev": ["desalineación", "elección evitada", "tensión de valores"],
+      "keywordsUp": [
+        "unión",
+        "elección",
+        "valores compartidos",
+        "atracción"
+      ],
+      "keywordsRev": [
+        "desalineación",
+        "elección evitada",
+        "tensión de valores"
+      ],
       "meaningUp": "Una decisión importante involucra al corazón y a los valores por igual. Elige lo que te alinea contigo mismo, no solo lo que te atrae.",
-      "meaningRev": "Hay una desarmonía entre lo que se quiere y lo que se elige. Puede que dos caminos no sean tan compatibles como parecía."
+      "meaningRev": "Hay una desarmonía entre lo que se quiere y lo que se elige. Puede que dos caminos no sean tan compatibles como parecía.",
+      "arcana": "major"
     },
     {
       "id": 7,
       "number": "VII",
       "name": "El Carro",
       "boschName": "El Jinete del Pez Volador",
-      "palette": ["#3a5d7a", "#e8c874", "#0f1a24"],
+      "palette": [
+        "#3a5d7a",
+        "#e8c874",
+        "#0f1a24"
+      ],
       "creature": "Un jinete cabalga un pez enorme que surca el aire como si fuera agua, tirando en direcciones opuestas hacia dos horizontes distintos, y aun así avanza.",
-      "keywordsUp": ["voluntad", "avance", "determinación", "control"],
-      "keywordsRev": ["dirección perdida", "fuerzas opuestas", "agresividad"],
+      "keywordsUp": [
+        "voluntad",
+        "avance",
+        "determinación",
+        "control"
+      ],
+      "keywordsRev": [
+        "dirección perdida",
+        "fuerzas opuestas",
+        "agresividad"
+      ],
       "meaningUp": "Fuerzas que parecen contradictorias pueden avanzar juntas si hay una dirección clara sosteniéndolas. Toma las riendas.",
-      "meaningRev": "Vas en dos direcciones a la vez y ninguna gana terreno. Antes de acelerar, elige un solo rumbo."
+      "meaningRev": "Vas en dos direcciones a la vez y ninguna gana terreno. Antes de acelerar, elige un solo rumbo.",
+      "arcana": "major"
     },
     {
       "id": 8,
       "number": "VIII",
       "name": "La Fuerza",
       "boschName": "La Doma de la Bestia Escamosa",
-      "palette": ["#7a4a2a", "#e8c874", "#241610"],
+      "palette": [
+        "#7a4a2a",
+        "#e8c874",
+        "#241610"
+      ],
       "creature": "Una figura menuda posa la mano, sin miedo, sobre el lomo de una bestia de escamas y colmillos. No la somete a golpes: la calma con presencia.",
-      "keywordsUp": ["coraje", "compasión", "fuerza interior", "paciencia"],
-      "keywordsRev": ["duda de sí mismo", "fuerza mal dirigida", "impaciencia"],
+      "keywordsUp": [
+        "coraje",
+        "compasión",
+        "fuerza interior",
+        "paciencia"
+      ],
+      "keywordsRev": [
+        "duda de sí mismo",
+        "fuerza mal dirigida",
+        "impaciencia"
+      ],
       "meaningUp": "La verdadera fuerza no es imponerse, es sostenerse con calma frente a lo que asusta. Doma con paciencia, no con violencia.",
-      "meaningRev": "Se está luchando contra uno mismo. La bestia interior necesita comprensión, no otro round de pelea."
+      "meaningRev": "Se está luchando contra uno mismo. La bestia interior necesita comprensión, no otro round de pelea.",
+      "arcana": "major"
     },
     {
       "id": 9,
       "number": "IX",
       "name": "El Ermitaño",
       "boschName": "El Ermitaño de la Linterna de Hueso",
-      "palette": ["#4a4a4a", "#e8c874", "#12100f"],
+      "palette": [
+        "#4a4a4a",
+        "#e8c874",
+        "#12100f"
+      ],
       "creature": "Camina solo entre ruinas nocturnas, alumbrando el suelo con una linterna hecha de un cráneo hueco. No busca compañía: busca ver con claridad dónde pisa.",
-      "keywordsUp": ["introspección", "soledad elegida", "búsqueda interior", "sabiduría"],
-      "keywordsRev": ["aislamiento", "soledad no deseada", "evitar respuestas"],
+      "keywordsUp": [
+        "introspección",
+        "soledad elegida",
+        "búsqueda interior",
+        "sabiduría"
+      ],
+      "keywordsRev": [
+        "aislamiento",
+        "soledad no deseada",
+        "evitar respuestas"
+      ],
       "meaningUp": "Apártate del ruido un tiempo. Las respuestas que necesitas no están en más compañía, sino en detenerte a mirar hacia adentro.",
-      "meaningRev": "El retiro se volvió encierro. La soledad que antes ayudaba ahora empieza a aislar más de lo que cura."
+      "meaningRev": "El retiro se volvió encierro. La soledad que antes ayudaba ahora empieza a aislar más de lo que cura.",
+      "arcana": "major"
     },
     {
       "id": 10,
       "number": "X",
       "name": "La Rueda de la Fortuna",
       "boschName": "La Rueda de los Condenados",
-      "palette": ["#5d2a7a", "#e8c874", "#180f24"],
+      "palette": [
+        "#5d2a7a",
+        "#e8c874",
+        "#180f24"
+      ],
       "creature": "Figuras diminutas suben y bajan sujetas a una rueda gigante que gira sola en medio de un páramo, sin que nadie la empuje ni pueda detenerla.",
-      "keywordsUp": ["ciclos", "destino", "cambio", "puntos de inflexión"],
-      "keywordsRev": ["resistencia al cambio", "mala racha", "sensación de estancamiento"],
+      "keywordsUp": [
+        "ciclos",
+        "destino",
+        "cambio",
+        "puntos de inflexión"
+      ],
+      "keywordsRev": [
+        "resistencia al cambio",
+        "mala racha",
+        "sensación de estancamiento"
+      ],
       "meaningUp": "Algo está girando más allá de tu control directo. Súbete al movimiento en vez de resistirlo: el ciclo trae también su parte alta.",
-      "meaningRev": "Sientes que la rueda solo baja. Recuerda que los ciclos son eso, ciclos: lo que gira, vuelve a girar."
+      "meaningRev": "Sientes que la rueda solo baja. Recuerda que los ciclos son eso, ciclos: lo que gira, vuelve a girar.",
+      "arcana": "major"
     },
     {
       "id": 11,
       "number": "XI",
       "name": "La Justicia",
       "boschName": "La Balanza del Juicio Final",
-      "palette": ["#8a8a8a", "#c94f2f", "#1a1a1a"],
+      "palette": [
+        "#8a8a8a",
+        "#c94f2f",
+        "#1a1a1a"
+      ],
       "creature": "Una balanza sostenida por manos sin cuerpo pesa un alma diminuta contra una pluma. Ni un gramo de más, ni de menos: el resultado es exacto.",
-      "keywordsUp": ["equidad", "verdad", "causa y efecto", "claridad"],
-      "keywordsRev": ["injusticia", "deshonestidad", "consecuencias evitadas"],
+      "keywordsUp": [
+        "equidad",
+        "verdad",
+        "causa y efecto",
+        "claridad"
+      ],
+      "keywordsRev": [
+        "injusticia",
+        "deshonestidad",
+        "consecuencias evitadas"
+      ],
       "meaningUp": "Es momento de una decisión honesta, tomada con la cabeza fría. Lo que se siembre aquí, se cosechará en la misma medida.",
-      "meaningRev": "Hay un desequilibrio que se ha estado evitando nombrar. Una cuenta pendiente, tarde o temprano, pide balance."
+      "meaningRev": "Hay un desequilibrio que se ha estado evitando nombrar. Una cuenta pendiente, tarde o temprano, pide balance.",
+      "arcana": "major"
     },
     {
       "id": 12,
       "number": "XII",
       "name": "El Colgado",
       "boschName": "El Colgado del Árbol Hueco",
-      "palette": ["#3a5d4a", "#e8c874", "#0f1a14"],
+      "palette": [
+        "#3a5d4a",
+        "#e8c874",
+        "#0f1a14"
+      ],
       "creature": "Suspendido cabeza abajo de un árbol cuyo tronco es hueco como una gruta, una figura observa el mundo invertido con una calma inesperada. No lucha por bajar.",
-      "keywordsUp": ["pausa", "rendición", "nueva perspectiva", "sacrificio consciente"],
-      "keywordsRev": ["resistencia inútil", "estancamiento", "sacrificio en vano"],
+      "keywordsUp": [
+        "pausa",
+        "rendición",
+        "nueva perspectiva",
+        "sacrificio consciente"
+      ],
+      "keywordsRev": [
+        "resistencia inútil",
+        "estancamiento",
+        "sacrificio en vano"
+      ],
       "meaningUp": "Deja de forcejear. A veces avanzar es quedarse quieto y mirar la situación desde un ángulo que antes no considerabas.",
-      "meaningRev": "Te aferras a una pausa que ya cumplió su función. Suelta la posición incómoda; ya diste la vuelta que necesitabas dar."
+      "meaningRev": "Te aferras a una pausa que ya cumplió su función. Suelta la posición incómoda; ya diste la vuelta que necesitabas dar.",
+      "arcana": "major"
     },
     {
       "id": 13,
       "number": "XIII",
       "name": "La Muerte",
       "boschName": "La Muerte de Guadaña entre las Ruinas",
-      "palette": ["#2a2a2a", "#c94f2f", "#0a0a0a"],
+      "palette": [
+        "#2a2a2a",
+        "#c94f2f",
+        "#0a0a0a"
+      ],
       "creature": "Una figura encapuchada camina entre columnas derrumbadas sin prisa ni malicia, segando lo que ya estaba marchito para que el suelo quede libre.",
-      "keywordsUp": ["transformación", "final necesario", "renovación", "dejar ir"],
-      "keywordsRev": ["resistencia al cambio", "estancamiento", "miedo al final"],
+      "keywordsUp": [
+        "transformación",
+        "final necesario",
+        "renovación",
+        "dejar ir"
+      ],
+      "keywordsRev": [
+        "resistencia al cambio",
+        "estancamiento",
+        "miedo al final"
+      ],
       "meaningUp": "Algo necesita terminar para que otra cosa pueda empezar. No es una amenaza: es un espacio que se libera.",
-      "meaningRev": "Te aferras a lo que ya no tiene vida. Cuanto más se posponga el cierre, más pesará cargarlo."
+      "meaningRev": "Te aferras a lo que ya no tiene vida. Cuanto más se posponga el cierre, más pesará cargarlo.",
+      "arcana": "major"
     },
     {
       "id": 14,
       "number": "XIV",
       "name": "La Templanza",
       "boschName": "El Ángel del Elixir Dorado",
-      "palette": ["#c9a44f", "#7a5dc9", "#1a1610"],
+      "palette": [
+        "#c9a44f",
+        "#7a5dc9",
+        "#1a1610"
+      ],
       "creature": "Un ser de alas translúcidas vierte un líquido dorado de una copa a otra, sin derramar una sola gota, mezclando fuego y agua en un mismo cuenco.",
-      "keywordsUp": ["equilibrio", "paciencia", "moderación", "integración"],
-      "keywordsRev": ["desequilibrio", "excesos", "impaciencia"],
+      "keywordsUp": [
+        "equilibrio",
+        "paciencia",
+        "moderación",
+        "integración"
+      ],
+      "keywordsRev": [
+        "desequilibrio",
+        "excesos",
+        "impaciencia"
+      ],
       "meaningUp": "Dos fuerzas opuestas pueden convivir si se mezclan con calma y medida. No hay prisa: el equilibrio se construye gota a gota.",
-      "meaningRev": "Algo se ha ido a un extremo. Falta mezcla, falta paciencia; se está derramando más de lo que se está integrando."
+      "meaningRev": "Algo se ha ido a un extremo. Falta mezcla, falta paciencia; se está derramando más de lo que se está integrando.",
+      "arcana": "major"
     },
     {
       "id": 15,
       "number": "XV",
       "name": "El Diablo",
       "boschName": "El Príncipe del Infierno Musical",
-      "palette": ["#c92f2f", "#2a1a0f", "#0a0505"],
+      "palette": [
+        "#c92f2f",
+        "#2a1a0f",
+        "#0a0505"
+      ],
       "creature": "Entronizado sobre instrumentos musicales convertidos en instrumentos de tormento, un ser cornudo dirige una orquesta de apetitos que nadie recuerda haber elegido tocar.",
-      "keywordsUp": ["ataduras", "deseo", "sombra", "materialismo"],
-      "keywordsRev": ["liberación", "romper cadenas", "reconocer patrones"],
+      "keywordsUp": [
+        "ataduras",
+        "deseo",
+        "sombra",
+        "materialismo"
+      ],
+      "keywordsRev": [
+        "liberación",
+        "romper cadenas",
+        "reconocer patrones"
+      ],
       "meaningUp": "Hay una atadura —un hábito, un deseo, una relación— que se disfraza de elección libre. Vale la pena mirarla de frente.",
-      "meaningRev": "Se empieza a ver la cadena por lo que es. El primer paso para soltarla ya se dio: nombrarla."
+      "meaningRev": "Se empieza a ver la cadena por lo que es. El primer paso para soltarla ya se dio: nombrarla.",
+      "arcana": "major"
     },
     {
       "id": 16,
       "number": "XVI",
       "name": "La Torre",
       "boschName": "La Torre en Llamas del Horizonte",
-      "palette": ["#c94f2f", "#2a2a2a", "#0a0a0a"],
+      "palette": [
+        "#c94f2f",
+        "#2a2a2a",
+        "#0a0a0a"
+      ],
       "creature": "En el fondo de un paisaje devastado, una torre de piedra arde y se resquebraja mientras figuras diminutas caen de sus ventanas hacia un despertar brusco.",
-      "keywordsUp": ["ruptura súbita", "revelación", "caos necesario", "colapso de lo falso"],
-      "keywordsRev": ["desastre evitado a medias", "miedo al cambio", "colapso postergado"],
+      "keywordsUp": [
+        "ruptura súbita",
+        "revelación",
+        "caos necesario",
+        "colapso de lo falso"
+      ],
+      "keywordsRev": [
+        "desastre evitado a medias",
+        "miedo al cambio",
+        "colapso postergado"
+      ],
       "meaningUp": "Una estructura que ya no era sólida se derrumba de golpe. Duele, pero deja ver lo que estaba construido sobre una base falsa.",
-      "meaningRev": "El derrumbe se ha estado conteniendo a la fuerza. Cuanto más se resista, más abrupta será la caída cuando llegue."
+      "meaningRev": "El derrumbe se ha estado conteniendo a la fuerza. Cuanto más se resista, más abrupta será la caída cuando llegue.",
+      "arcana": "major"
     },
     {
       "id": 17,
       "number": "XVII",
       "name": "La Estrella",
       "boschName": "La Doncella del Huevo de Cristal",
-      "palette": ["#4a7ac9", "#e8c874", "#0f1424"],
+      "palette": [
+        "#4a7ac9",
+        "#e8c874",
+        "#0f1424"
+      ],
       "creature": "Una figura desnuda emerge de un huevo transparente bajo un cielo lleno de estrellas nuevas, vertiendo agua clara sobre una tierra que empieza a sanar.",
-      "keywordsUp": ["esperanza", "sanación", "fe", "renovación serena"],
-      "keywordsRev": ["desesperanza", "desconexión", "fe perdida"],
+      "keywordsUp": [
+        "esperanza",
+        "sanación",
+        "fe",
+        "renovación serena"
+      ],
+      "keywordsRev": [
+        "desesperanza",
+        "desconexión",
+        "fe perdida"
+      ],
       "meaningUp": "Después de la tormenta, algo empieza a sanar en silencio. Confía en el proceso aunque los resultados aún no se vean del todo.",
-      "meaningRev": "Cuesta creer que las cosas puedan mejorar. Aun así, la sanación no depende de creer en ella para empezar a suceder."
+      "meaningRev": "Cuesta creer que las cosas puedan mejorar. Aun así, la sanación no depende de creer en ella para empezar a suceder.",
+      "arcana": "major"
     },
     {
       "id": 18,
       "number": "XVIII",
       "name": "La Luna",
       "boschName": "Los Peces Nocturnos bajo la Luna",
-      "palette": ["#3a4a7a", "#8a9ac9", "#0a0f1a"],
+      "palette": [
+        "#3a4a7a",
+        "#8a9ac9",
+        "#0a0f1a"
+      ],
       "creature": "Bajo una luna con rostro propio, peces alados nadan por el aire nocturno entre torres lejanas, y nadie sabe bien qué es reflejo y qué es real.",
-      "keywordsUp": ["incertidumbre", "inconsciente", "ilusión", "intuición confusa"],
-      "keywordsRev": ["claridad emergente", "miedos revelados", "confusión que se disipa"],
+      "keywordsUp": [
+        "incertidumbre",
+        "inconsciente",
+        "ilusión",
+        "intuición confusa"
+      ],
+      "keywordsRev": [
+        "claridad emergente",
+        "miedos revelados",
+        "confusión que se disipa"
+      ],
       "meaningUp": "No todo es visible todavía. Avanza con cautela por terreno incierto, confiando en la intuición más que en la certeza.",
-      "meaningRev": "La niebla empieza a levantarse. Lo que parecía amenazante a la distancia se está revelando más claro y menos temible."
+      "meaningRev": "La niebla empieza a levantarse. Lo que parecía amenazante a la distancia se está revelando más claro y menos temible.",
+      "arcana": "major"
     },
     {
       "id": 19,
       "number": "XIX",
       "name": "El Sol",
       "boschName": "El Jardín Iluminado",
-      "palette": ["#e8b02f", "#c94f2f", "#241a0a"],
+      "palette": [
+        "#e8b02f",
+        "#c94f2f",
+        "#241a0a"
+      ],
       "creature": "Bajo un sol enorme y benévolo, criaturas extrañas —mitad fruta, mitad animal— juegan sin miedo entre flores del tamaño de árboles. Todo es abundancia sin sombra.",
-      "keywordsUp": ["alegría", "vitalidad", "éxito", "claridad total"],
-      "keywordsRev": ["alegría postergada", "optimismo excesivo", "éxito parcial"],
+      "keywordsUp": [
+        "alegría",
+        "vitalidad",
+        "éxito",
+        "claridad total"
+      ],
+      "keywordsRev": [
+        "alegría postergada",
+        "optimismo excesivo",
+        "éxito parcial"
+      ],
       "meaningUp": "Hay una claridad y una vitalidad genuinas disponibles ahora. Celebra lo logrado; no hace falta buscarle la sombra a esto.",
-      "meaningRev": "El brillo se siente forzado o incompleto. Puede que se esté disfrazando de alegría algo que todavía necesita atención."
+      "meaningRev": "El brillo se siente forzado o incompleto. Puede que se esté disfrazando de alegría algo que todavía necesita atención.",
+      "arcana": "major"
     },
     {
       "id": 20,
       "number": "XX",
       "name": "El Juicio",
       "boschName": "La Trompeta del Juicio entre las Nubes",
-      "palette": ["#7a5dc9", "#e8c874", "#160f24"],
+      "palette": [
+        "#7a5dc9",
+        "#e8c874",
+        "#160f24"
+      ],
       "creature": "Un ángel de alas desplegadas hace sonar una trompeta sobre un paisaje donde figuras despiertan de tumbas de tierra, sacudiéndose el polvo de una vida anterior.",
-      "keywordsUp": ["renacimiento", "llamado interior", "evaluación honesta", "despertar"],
-      "keywordsRev": ["autocrítica dura", "llamado ignorado", "duda persistente"],
+      "keywordsUp": [
+        "renacimiento",
+        "llamado interior",
+        "evaluación honesta",
+        "despertar"
+      ],
+      "keywordsRev": [
+        "autocrítica dura",
+        "llamado ignorado",
+        "duda persistente"
+      ],
       "meaningUp": "Algo te está llamando a mirar tu historia con honestidad y dejar atrás una versión anterior de ti. Responde al llamado.",
-      "meaningRev": "El juicio se ha vuelto más duro hacia uno mismo que útil. Es momento de evaluar sin castigar."
+      "meaningRev": "El juicio se ha vuelto más duro hacia uno mismo que útil. Es momento de evaluar sin castigar.",
+      "arcana": "major"
     },
     {
       "id": 21,
       "number": "XXI",
       "name": "El Mundo",
       "boschName": "El Jardín de las Delicias Eterno",
-      "palette": ["#4a7a3a", "#e8c874", "#7a5dc9"],
+      "palette": [
+        "#4a7a3a",
+        "#e8c874",
+        "#7a5dc9"
+      ],
       "creature": "En el centro de un jardín circular donde conviven todas las criaturas anteriores —peces, aves, amantes, bestias domadas— el ciclo se cierra y vuelve a empezar, completo.",
-      "keywordsUp": ["culminación", "integración", "logro", "totalidad"],
-      "keywordsRev": ["cierre incompleto", "atajos", "falta de finalización"],
+      "keywordsUp": [
+        "culminación",
+        "integración",
+        "logro",
+        "totalidad"
+      ],
+      "keywordsRev": [
+        "cierre incompleto",
+        "atajos",
+        "falta de finalización"
+      ],
       "meaningUp": "Un ciclo llega a su forma completa. Lo que se sembró, se recorrió y se sostuvo, ahora encuentra su lugar como un todo.",
-      "meaningRev": "Falta un último paso para que esto se sienta terminado. No te conformes con un cierre a medias."
+      "meaningRev": "Falta un último paso para que esto se sienta terminado. No te conformes con un cierre a medias.",
+      "arcana": "major"
+    }
+  ],
+  "suits": {
+    "copas": {
+      "label": "Copas",
+      "boschName": "Copas del Estanque",
+      "element": "Agua",
+      "theme": "Criaturas anfibias y de branquias, nacidas del estanque del jardín. Rigen los vínculos y la vida emocional."
+    },
+    "bastos": {
+      "label": "Bastos",
+      "boschName": "Varas del Vergel",
+      "element": "Fuego",
+      "theme": "Criaturas de corteza, zarcillo y espina, crecidas entre plantas encendidas. Rigen la voluntad, la creatividad y la acción."
+    },
+    "espadas": {
+      "label": "Espadas",
+      "boschName": "Espadas del Aire",
+      "element": "Aire",
+      "theme": "Criaturas aladas y de pico afilado, propias del cielo del jardín. Rigen el pensamiento, el conflicto y la verdad."
+    },
+    "oros": {
+      "label": "Oros",
+      "boschName": "Frutos de la Tierra",
+      "element": "Tierra",
+      "theme": "Criaturas de raíz y caparazón, nacidas entre frutos y monedas de la tierra. Rigen lo material, el trabajo y el cuerpo."
+    }
+  },
+  "minorArcana": [
+    {
+      "id": 22,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "As",
+      "name": "As de Copas",
+      "boschName": "El Cáliz que Rebalsa",
+      "palette": [
+        "#7fb8c9",
+        "#2d4a5e",
+        "#10181c"
+      ],
+      "creature": "Una copa de cristal rosado brota del agua como una flor, y de su borde no dejan de caer perlas que se convierten en peces al tocar la superficie.",
+      "keywordsUp": [
+        "apertura",
+        "ternura",
+        "comienzo emocional"
+      ],
+      "keywordsRev": [
+        "emoción contenida",
+        "corazón cerrado",
+        "desborde"
+      ],
+      "meaningUp": "Algo en el pecho se abre sin pedir permiso. Es el momento de dejar entrar lo que se siente, sin medirlo todavía.",
+      "meaningRev": "La copa está volcada o seca. Hay un sentimiento que no encuentra cómo salir, o que salió todo de una vez y dejó el fondo vacío."
+    },
+    {
+      "id": 23,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "2",
+      "name": "2 de Copas",
+      "boschName": "El Espejo de Agua",
+      "palette": [
+        "#9a8fc9",
+        "#33395e",
+        "#12141c"
+      ],
+      "creature": "Dos criaturas de branquias translúcidas nadan una frente a la otra, sosteniendo entre sus aletas una misma perla que ninguna suelta.",
+      "keywordsUp": [
+        "vínculo",
+        "reciprocidad",
+        "encuentro"
+      ],
+      "keywordsRev": [
+        "desequilibrio afectivo",
+        "malentendido",
+        "distancia"
+      ],
+      "meaningUp": "Un intercambio parejo, algo que se da y se recibe casi sin palabras. La confianza empieza a tejerse en la superficie tranquila.",
+      "meaningRev": "El reflejo se distorsiona; uno de los dos empieza a dar más de lo que recibe, y la corriente se vuelve dispareja."
+    },
+    {
+      "id": 24,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "3",
+      "name": "3 de Copas",
+      "boschName": "La Ronda de las Sirenas",
+      "palette": [
+        "#6fa8a0",
+        "#264545",
+        "#0f1616"
+      ],
+      "creature": "Tres sirenas de cola escamosa y coronas de algas bailan en círculo sobre el agua, alzando copas que chocan sin derramar una gota.",
+      "keywordsUp": [
+        "celebración",
+        "amistad",
+        "comunidad"
+      ],
+      "keywordsRev": [
+        "exceso",
+        "chisme",
+        "exclusión"
+      ],
+      "meaningUp": "Hay motivo de fiesta compartida; el gozo se multiplica cuando se reparte entre otros que también lo sostienen.",
+      "meaningRev": "La ronda se vuelve ruido, o alguien queda afuera del círculo. Revisa si la celebración esconde una herida sin nombrar."
+    },
+    {
+      "id": 25,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "4",
+      "name": "4 de Copas",
+      "boschName": "El Sapo Distraído",
+      "palette": [
+        "#8fc0d9",
+        "#2c4a6b",
+        "#101c22"
+      ],
+      "creature": "Un sapo con corona de flores marchitas está sentado bajo un árbol frutal, con tres copas frente a él, mirando hacia otro lado mientras una cuarta copa flota, ofrecida, sin que la vea.",
+      "keywordsUp": [
+        "apatía",
+        "hastío",
+        "contemplación"
+      ],
+      "keywordsRev": [
+        "despertar",
+        "nueva mirada",
+        "apertura tardía"
+      ],
+      "meaningUp": "El hartazgo nubla lo que hay disponible. Algo bueno se ofrece justo frente a ti, pero el ánimo está en otro lado.",
+      "meaningRev": "Empieza a asomar la curiosidad otra vez; lo que antes parecía gris recupera algo de color."
+    },
+    {
+      "id": 26,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "5",
+      "name": "5 de Copas",
+      "boschName": "El Duelo junto al Sauce",
+      "palette": [
+        "#7fb8c9",
+        "#2d4a5e",
+        "#10181c"
+      ],
+      "creature": "Una figura encapuchada de patas de garza llora sobre tres copas volcadas, sin notar que dos siguen en pie, intactas, a sus espaldas.",
+      "keywordsUp": [
+        "pérdida",
+        "duelo",
+        "lo que ya no está"
+      ],
+      "keywordsRev": [
+        "aceptación",
+        "mirar lo que queda",
+        "consuelo"
+      ],
+      "meaningUp": "Hay una pérdida real que merece ser llorada. Pero el dolor, si se mira solo hacia las copas caídas, tapa lo que sigue de pie.",
+      "meaningRev": "Poco a poco el cuello se gira hacia lo que todavía se tiene. El duelo no termina, pero deja espacio para otra cosa."
+    },
+    {
+      "id": 27,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "6",
+      "name": "6 de Copas",
+      "boschName": "El Jardín de la Infancia",
+      "palette": [
+        "#9a8fc9",
+        "#33395e",
+        "#12141c"
+      ],
+      "creature": "Dos criaturas pequeñas de orejas de conejo se entregan copas llenas de flores diminutas, en un rincón del jardín que parece detenido en otro tiempo.",
+      "keywordsUp": [
+        "nostalgia",
+        "ternura",
+        "memoria"
+      ],
+      "keywordsRev": [
+        "idealización del pasado",
+        "estancamiento",
+        "apego a lo viejo"
+      ],
+      "meaningUp": "Algo de lo simple y lo antiguo vuelve a tocar la puerta. Hay dulzura en revisitar lo que una vez fue seguro.",
+      "meaningRev": "El pasado se vuelve refugio permanente y eso frena lo que viene. No todo lo de antes merece ser repetido."
+    },
+    {
+      "id": 28,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "7",
+      "name": "7 de Copas",
+      "boschName": "El Enjambre de Espejismos",
+      "palette": [
+        "#6fa8a0",
+        "#264545",
+        "#0f1616"
+      ],
+      "creature": "Siete copas flotan entre la niebla del estanque, cada una con una criatura distinta adentro — una joya, una sombra, un castillo diminuto — y ninguna es lo que aparenta.",
+      "keywordsUp": [
+        "fantasía",
+        "opciones",
+        "imaginación"
+      ],
+      "keywordsRev": [
+        "confusión",
+        "ilusión",
+        "parálisis por exceso"
+      ],
+      "meaningUp": "Se abre un abanico de posibilidades, casi demasiado ancho. Vale la pena soñar, pero tarde o temprano hay que elegir una copa.",
+      "meaningRev": "El exceso de opciones se vuelve niebla. Ninguna promesa se sostiene si no se la mira de cerca."
+    },
+    {
+      "id": 29,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "8",
+      "name": "8 de Copas",
+      "boschName": "La Partida Nocturna",
+      "palette": [
+        "#8fc0d9",
+        "#2c4a6b",
+        "#101c22"
+      ],
+      "creature": "Una figura con capa de escamas se aleja del estanque de espaldas, dejando ocho copas ordenadas en la orilla, bajo una luna que también parece a punto de irse.",
+      "keywordsUp": [
+        "alejamiento",
+        "búsqueda de sentido",
+        "dejar atrás"
+      ],
+      "keywordsRev": [
+        "miedo a avanzar",
+        "regreso prematuro",
+        "apego a lo conocido"
+      ],
+      "meaningUp": "Lo construido ya no alcanza. Alejarse, aunque duela, es la única forma de encontrar lo que realmente se busca.",
+      "meaningRev": "El miedo tira de vuelta hacia lo conocido, incluso cuando ya no sirve. Vale preguntarse qué se evita al no partir."
+    },
+    {
+      "id": 30,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "9",
+      "name": "9 de Copas",
+      "boschName": "El Banquete Satisfecho",
+      "palette": [
+        "#7fb8c9",
+        "#2d4a5e",
+        "#10181c"
+      ],
+      "creature": "Una criatura panzona de branquias y sonrisa ancha está sentada frente a nueve copas dispuestas en arco, como trofeos, con los brazos cruzados de puro gusto.",
+      "keywordsUp": [
+        "satisfacción",
+        "deseo cumplido",
+        "placer"
+      ],
+      "keywordsRev": [
+        "complacencia vacía",
+        "exceso",
+        "autoindulgencia"
+      ],
+      "meaningUp": "Un deseo concreto se cumple y se siente bien reconocerlo. Es lícito disfrutar sin pedir disculpas.",
+      "meaningRev": "La satisfacción se vuelve autocomplacencia; revisa si el gusto de hoy tapa un vacío de fondo."
+    },
+    {
+      "id": 31,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "10",
+      "name": "10 de Copas",
+      "boschName": "El Arco de Familia",
+      "palette": [
+        "#9a8fc9",
+        "#33395e",
+        "#12141c"
+      ],
+      "creature": "Diez copas forman un arco de agua sobre un grupo de criaturas pequeñas — padres alados, crías con caparazón — que juegan debajo, empapadas de luz.",
+      "keywordsUp": [
+        "plenitud",
+        "armonía",
+        "hogar emocional"
+      ],
+      "keywordsRev": [
+        "idealización familiar",
+        "fisura bajo la superficie",
+        "presión de mantener las apariencias"
+      ],
+      "meaningUp": "Una sensación de basta con esto recorre los vínculos cercanos. La armonía, cuando llega, no necesita ruido.",
+      "meaningRev": "El cuadro perfecto tiene una grieta que nadie quiere señalar. Vale la pena mirarla antes de que crezca."
+    },
+    {
+      "id": 32,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "Sota",
+      "name": "Sota de Copas",
+      "boschName": "El Paje del Estanque",
+      "palette": [
+        "#6fa8a0",
+        "#264545",
+        "#0f1616"
+      ],
+      "creature": "Un joven de pies palmeados sostiene una copa de la que asoma un pez que le habla al oído, mientras él escucha con la cabeza ladeada.",
+      "keywordsUp": [
+        "sensibilidad",
+        "creatividad naciente",
+        "mensajes del corazón"
+      ],
+      "keywordsRev": [
+        "inmadurez emocional",
+        "fantasía sin base",
+        "capricho pasajero"
+      ],
+      "meaningUp": "Llega una noticia, una idea o un afecto todavía tierno. Hay que darle tiempo para que tome forma sin apurarlo.",
+      "meaningRev": "La emoción se confunde con capricho. Antes de actuar, conviene distinguir el deseo real del antojo pasajero."
+    },
+    {
+      "id": 33,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "Caballero",
+      "name": "Caballero de Copas",
+      "boschName": "El Jinete de las Aguas Mansas",
+      "palette": [
+        "#8fc0d9",
+        "#2c4a6b",
+        "#101c22"
+      ],
+      "creature": "Un jinete con armadura de nácar cabalga sobre una criatura anfibia de paso lento, ofreciendo una copa hacia adelante como si fuera una invitación.",
+      "keywordsUp": [
+        "idealismo",
+        "propuesta romántica",
+        "gesto sincero"
+      ],
+      "keywordsRev": [
+        "seducción vacía",
+        "promesas sin cumplir",
+        "idealización excesiva"
+      ],
+      "meaningUp": "Se acerca una oferta hecha con el corazón — una invitación, una declaración, un gesto amable. Vale recibirla con la misma sinceridad.",
+      "meaningRev": "Las palabras bonitas no siempre traen acción detrás. Conviene mirar si la oferta se sostiene con hechos."
+    },
+    {
+      "id": 34,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "Reina",
+      "name": "Reina de Copas",
+      "boschName": "La Reina del Reflejo",
+      "palette": [
+        "#7fb8c9",
+        "#2d4a5e",
+        "#10181c"
+      ],
+      "creature": "Sentada en un trono de conchas entrelazadas, sostiene una copa cerrada con tapa labrada, como quien guarda algo demasiado íntimo para mostrarlo entero.",
+      "keywordsUp": [
+        "compasión",
+        "intuición",
+        "cuidado emocional"
+      ],
+      "keywordsRev": [
+        "sobreinvolucración",
+        "límites difusos",
+        "absorción del dolor ajeno"
+      ],
+      "meaningUp": "La sensibilidad se vuelve una brújula fiable. Escuchar el propio interior — y el ajeno — trae claridad, no confusión.",
+      "meaningRev": "Cuidar del otro empieza a costar demasiado de una misma. Hace falta poner un borde entre lo que se siente y lo que se carga."
+    },
+    {
+      "id": 35,
+      "arcana": "minor",
+      "suit": "copas",
+      "number": "Rey",
+      "name": "Rey de Copas",
+      "boschName": "El Rey de Aguas Quietas",
+      "palette": [
+        "#9a8fc9",
+        "#33395e",
+        "#12141c"
+      ],
+      "creature": "Sobre un trono a medio hundir en el estanque, un rey de barba de algas sostiene su copa con calma, mientras a su alrededor el agua se agita sin tocarlo.",
+      "keywordsUp": [
+        "madurez emocional",
+        "estabilidad",
+        "contención serena"
+      ],
+      "keywordsRev": [
+        "represión emocional",
+        "frialdad",
+        "manipulación sutil"
+      ],
+      "meaningUp": "Es posible sentir hondo sin ahogarse en ello. Esta carta pide sostener el temporal propio y ajeno sin perder el centro.",
+      "meaningRev": "La calma se vuelve máscara. Bajo la superficie tranquila hay algo que no se está queriendo mirar — o que se usa para controlar a otros."
+    },
+    {
+      "id": 36,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "As",
+      "name": "As de Bastos",
+      "boschName": "El Brote que Arde",
+      "palette": [
+        "#e8a13a",
+        "#4a6b1f",
+        "#1c1408"
+      ],
+      "creature": "Una vara nudosa clavada en tierra negra echa un brote verde que arde sin consumirse, y de la llama sale una polilla dorada.",
+      "keywordsUp": [
+        "impulso creativo",
+        "chispa inicial",
+        "deseo de hacer"
+      ],
+      "keywordsRev": [
+        "bloqueo creativo",
+        "impulso mal canalizado",
+        "energía dispersa"
+      ],
+      "meaningUp": "Aparece una idea con fuerza propia, casi urgente. Es momento de darle cauce antes de que se apague sola.",
+      "meaningRev": "El impulso está ahí pero no encuentra salida, o se dispersa en mil direcciones sin concretar ninguna."
+    },
+    {
+      "id": 37,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "2",
+      "name": "2 de Bastos",
+      "boschName": "El Mirador del Horizonte",
+      "palette": [
+        "#e07a3e",
+        "#3d5a26",
+        "#1a1206"
+      ],
+      "creature": "Una criatura con cuernos de rama sostiene un globo terráqueo hecho de fruta partida, mirando hacia un horizonte de colinas encendidas.",
+      "keywordsUp": [
+        "planificación",
+        "visión a futuro",
+        "decisión de expansión"
+      ],
+      "keywordsRev": [
+        "miedo a lo desconocido",
+        "indecisión",
+        "mirada corta"
+      ],
+      "meaningUp": "El terreno ya conocido empieza a quedar chico. Es tiempo de mirar más allá y planear el próximo paso con ambición.",
+      "meaningRev": "La comodidad de lo ya ganado frena cualquier intento de cruzar el horizonte. Vale preguntarse qué miedo sostiene esa quietud."
+    },
+    {
+      "id": 38,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "3",
+      "name": "3 de Bastos",
+      "boschName": "El Guardián de las Tres Ramas",
+      "palette": [
+        "#d9b23e",
+        "#5a6b2f",
+        "#161408"
+      ],
+      "creature": "De espaldas, una figura enraizada como un árbol observa tres varas clavadas en la colina, cada una floreciendo a un ritmo distinto.",
+      "keywordsUp": [
+        "expansión",
+        "espera activa",
+        "resultados en camino"
+      ],
+      "keywordsRev": [
+        "retrasos",
+        "obstáculos externos",
+        "impaciencia"
+      ],
+      "meaningUp": "Lo sembrado empieza a dar señales. Toca sostener la confianza mientras el trabajo hecho madura por su cuenta.",
+      "meaningRev": "Algo se demora más de lo esperado. La frustración no acelera el crecimiento; solo lo hace más pesado de sobrellevar."
+    },
+    {
+      "id": 39,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "4",
+      "name": "4 de Bastos",
+      "boschName": "El Arco Florido",
+      "palette": [
+        "#e8843a",
+        "#496b33",
+        "#1c1206"
+      ],
+      "creature": "Cuatro varas cubiertas de enredaderas forman un arco festivo bajo el que criaturas aladas menores bailan en ronda, coronadas de fruta.",
+      "keywordsUp": [
+        "celebración",
+        "estabilidad",
+        "logro compartido"
+      ],
+      "keywordsRev": [
+        "celebración postergada",
+        "sensación de no pertenecer",
+        "festejo forzado"
+      ],
+      "meaningUp": "Hay un motivo real para celebrar un avance, aunque sea pequeño. Compartirlo con otros lo hace más sólido.",
+      "meaningRev": "El festejo se siente fuera de lugar, o llega antes de tiempo. Puede que el sentido de pertenencia esté en duda."
+    },
+    {
+      "id": 40,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "5",
+      "name": "5 de Bastos",
+      "boschName": "La Riña de las Cinco Varas",
+      "palette": [
+        "#e8a13a",
+        "#4a6b1f",
+        "#1c1408"
+      ],
+      "creature": "Cinco criaturas de piel corteza forcejean entre sí con varas cruzadas, más por juego territorial que por verdadero enojo.",
+      "keywordsUp": [
+        "competencia",
+        "fricción menor",
+        "choque de ideas"
+      ],
+      "keywordsRev": [
+        "conflicto que escala",
+        "tensión no resuelta",
+        "desgaste"
+      ],
+      "meaningUp": "Hay tironeo, opiniones que compiten, energía que se cruza. No es necesariamente destructivo si se canaliza bien.",
+      "meaningRev": "La fricción deja de ser productiva y se vuelve desgaste. Alguien tiene que bajar la vara primero."
+    },
+    {
+      "id": 41,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "6",
+      "name": "6 de Bastos",
+      "boschName": "El Regreso Coronado",
+      "palette": [
+        "#e07a3e",
+        "#3d5a26",
+        "#1a1206"
+      ],
+      "creature": "Sobre una criatura de lomo alargado, un jinete regresa con una vara coronada de laurel silvestre, aclamado por pequeñas criaturas que asoman entre las hojas.",
+      "keywordsUp": [
+        "reconocimiento",
+        "victoria visible",
+        "éxito compartido"
+      ],
+      "keywordsRev": [
+        "reconocimiento retrasado",
+        "orgullo herido",
+        "éxito solitario"
+      ],
+      "meaningUp": "Un esfuerzo sostenido empieza a ser visto por otros. El logro llega acompañado de un reconocimiento merecido.",
+      "meaningRev": "El triunfo no se siente como se esperaba, o tarda en llegar el aplauso. Vale revisar si el logro se está midiendo con la vara equivocada."
+    },
+    {
+      "id": 42,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "7",
+      "name": "7 de Bastos",
+      "boschName": "El Defensor de la Colina",
+      "palette": [
+        "#d9b23e",
+        "#5a6b2f",
+        "#161408"
+      ],
+      "creature": "Desde lo alto de un montículo de raíces, una figura sostiene su vara en alto, enfrentando seis más que suben desde abajo sin retroceder un paso.",
+      "keywordsUp": [
+        "defensa de una posición",
+        "coraje",
+        "resistencia"
+      ],
+      "keywordsRev": [
+        "agotamiento por sobreexigencia",
+        "ceder terreno",
+        "desgaste defensivo"
+      ],
+      "meaningUp": "Hace falta sostener lo que se ha construido frente a quienes lo cuestionan. La posición es defendible si no se abandona.",
+      "meaningRev": "Defender todo el tiempo cansa. Puede ser momento de elegir mejor las batallas."
+    },
+    {
+      "id": 43,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "8",
+      "name": "8 de Bastos",
+      "boschName": "El Vuelo de las Ocho Varas",
+      "palette": [
+        "#e8843a",
+        "#496b33",
+        "#1c1206"
+      ],
+      "creature": "Ocho varas encendidas cruzan el cielo del jardín como flechas, dejando estelas de humo dorado sobre criaturas que las miran pasar.",
+      "keywordsUp": [
+        "velocidad",
+        "movimiento repentino",
+        "noticias que llegan rápido"
+      ],
+      "keywordsRev": [
+        "retrasos frustrantes",
+        "exceso de apuro",
+        "descontrol"
+      ],
+      "meaningUp": "Todo empieza a moverse rápido después de un tiempo detenido. Conviene estar listo para actuar sin demorarse.",
+      "meaningRev": "La prisa genera tropiezos, o lo que debía llegar rápido se traba sin explicación clara."
+    },
+    {
+      "id": 44,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "9",
+      "name": "9 de Bastos",
+      "boschName": "El Último Guardián",
+      "palette": [
+        "#e8a13a",
+        "#4a6b1f",
+        "#1c1408"
+      ],
+      "creature": "Una criatura vendada y cansada se apoya en una vara, rodeada de otras ocho clavadas en fila, vigilando aunque el cuerpo pida descanso.",
+      "keywordsUp": [
+        "resiliencia",
+        "última reserva de fuerza",
+        "vigilancia"
+      ],
+      "keywordsRev": [
+        "agotamiento",
+        "desconfianza excesiva",
+        "paranoia defensiva"
+      ],
+      "meaningUp": "Queda una reserva de fuerza aunque el cansancio sea real. Un esfuerzo más puede sostener lo ya construido.",
+      "meaningRev": "La guardia se vuelve desconfianza generalizada. No todo enemigo es real; algunos se inventan por puro agotamiento."
+    },
+    {
+      "id": 45,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "10",
+      "name": "10 de Bastos",
+      "boschName": "El Cargador de Espinas",
+      "palette": [
+        "#e07a3e",
+        "#3d5a26",
+        "#1a1206"
+      ],
+      "creature": "Una figura encorvada avanza cargando diez varas atadas en un fardo desordenado, casi sin ver el camino que tiene delante.",
+      "keywordsUp": [
+        "sobrecarga",
+        "responsabilidad excesiva",
+        "esfuerzo final"
+      ],
+      "keywordsRev": [
+        "soltar peso",
+        "delegar",
+        "reconocer el límite propio"
+      ],
+      "meaningUp": "El peso acumulado es mucho, pero la meta está cerca. Vale sostener un tramo más antes de soltar carga.",
+      "meaningRev": "Es momento de bajar algo de ese fardo. No todo lo que se carga tiene que seguir siendo tuyo."
+    },
+    {
+      "id": 46,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "Sota",
+      "name": "Sota de Bastos",
+      "boschName": "El Paje de las Chispas",
+      "palette": [
+        "#d9b23e",
+        "#5a6b2f",
+        "#161408"
+      ],
+      "creature": "Un joven de piel moteada como corteza sostiene una vara que despide chispas cada vez que se mueve, mirando todo con hambre de mundo.",
+      "keywordsUp": [
+        "entusiasmo",
+        "curiosidad",
+        "ganas de explorar"
+      ],
+      "keywordsRev": [
+        "impulsividad",
+        "proyectos sin continuidad",
+        "entusiasmo pasajero"
+      ],
+      "meaningUp": "Llega una idea o una noticia con energía nueva. El entusiasmo, bien dirigido, puede ser el comienzo de algo real.",
+      "meaningRev": "La emoción del inicio no alcanza para sostener el proyecto. Falta compromiso más allá del primer impulso."
+    },
+    {
+      "id": 47,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "Caballero",
+      "name": "Caballero de Bastos",
+      "boschName": "El Jinete del Vergel Encendido",
+      "palette": [
+        "#e8843a",
+        "#496b33",
+        "#1c1206"
+      ],
+      "creature": "Sobre una criatura de crin ardiente, un jinete impaciente avanza sin mirar atrás, dejando huellas de fuego breve sobre la hierba.",
+      "keywordsUp": [
+        "acción decidida",
+        "aventura",
+        "impulso valiente"
+      ],
+      "keywordsRev": [
+        "temeridad",
+        "impaciencia",
+        "actuar sin pensar"
+      ],
+      "meaningUp": "El momento pide moverse, no quedarse pensando. La valentía de avanzar, incluso sin todas las certezas, rinde frutos.",
+      "meaningRev": "La prisa por actuar deja cabos sueltos. Antes de lanzarse, conviene mirar dos veces el terreno."
+    },
+    {
+      "id": 48,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "Reina",
+      "name": "Reina de Bastos",
+      "boschName": "La Reina del Fuego Sereno",
+      "palette": [
+        "#e8a13a",
+        "#4a6b1f",
+        "#1c1408"
+      ],
+      "creature": "Sentada entre girasoles gigantes, sostiene su vara con una mano y con la otra acaricia a un gato de cola encendida que descansa a sus pies.",
+      "keywordsUp": [
+        "confianza",
+        "carisma",
+        "independencia"
+      ],
+      "keywordsRev": [
+        "celos",
+        "necesidad de aprobación",
+        "energía dispersa"
+      ],
+      "meaningUp": "Una seguridad tranquila, sin necesidad de imponerse, atrae lo que se necesita. El brillo propio no requiere permiso ajeno.",
+      "meaningRev": "La confianza se tambalea cuando se mide contra la de otros. Vale volver a encender la propia luz sin comparaciones."
+    },
+    {
+      "id": 49,
+      "arcana": "minor",
+      "suit": "bastos",
+      "number": "Rey",
+      "name": "Rey de Bastos",
+      "boschName": "El Rey del Horizonte en Llamas",
+      "palette": [
+        "#e07a3e",
+        "#3d5a26",
+        "#1a1206"
+      ],
+      "creature": "De pie sobre una colina, un rey con capa de hojas secas sostiene su vara como cetro, mirando un territorio vasto que parece esperarlo.",
+      "keywordsUp": [
+        "liderazgo",
+        "visión",
+        "coraje para emprender"
+      ],
+      "keywordsRev": [
+        "autoritarismo",
+        "impulsividad en el mando",
+        "arrogancia"
+      ],
+      "meaningUp": "Hay capacidad real de guiar, de emprender, de sostener una visión grande. El coraje aquí se combina con experiencia.",
+      "meaningRev": "El liderazgo se vuelve imposición. Sostener una visión no debería significar arrasar con las ajenas."
+    },
+    {
+      "id": 50,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "As",
+      "name": "As de Espadas",
+      "boschName": "La Espada que Corta la Niebla",
+      "palette": [
+        "#c9d3d9",
+        "#4a5560",
+        "#12151a"
+      ],
+      "creature": "Una espada de filo translúcido atraviesa una nube baja, y del corte cae una sola pluma que gira hasta el suelo con precisión de aguja.",
+      "keywordsUp": [
+        "claridad",
+        "verdad",
+        "decisión mental"
+      ],
+      "keywordsRev": [
+        "confusión",
+        "verdad usada como arma",
+        "crudeza excesiva"
+      ],
+      "meaningUp": "Una idea se vuelve nítida de golpe. Es momento de nombrar las cosas como son, sin rodeos.",
+      "meaningRev": "La claridad se usa para herir en vez de para ordenar. O la mente da vueltas sin encontrar el corte necesario."
+    },
+    {
+      "id": 51,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "2",
+      "name": "2 de Espadas",
+      "boschName": "La Vigía de Ojos Vendados",
+      "palette": [
+        "#b3c4d9",
+        "#3d4a5e",
+        "#10141c"
+      ],
+      "creature": "Una criatura alada con los ojos cubiertos sostiene dos espadas cruzadas frente al pecho, en perfecto equilibrio sobre una rama que apenas la sostiene.",
+      "keywordsUp": [
+        "indecisión consciente",
+        "equilibrio tenso",
+        "pausa necesaria"
+      ],
+      "keywordsRev": [
+        "parálisis",
+        "evasión",
+        "decisión postergada demasiado tiempo"
+      ],
+      "meaningUp": "Dos caminos se sostienen en tensión. A veces no decidir todavía es la decisión más honesta que se puede tomar.",
+      "meaningRev": "La venda ya no protege, solo posterga. La decisión que se evita sigue estando ahí, esperando."
+    },
+    {
+      "id": 52,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "3",
+      "name": "3 de Espadas",
+      "boschName": "El Corazón Atravesado por Alas",
+      "palette": [
+        "#d0d0d9",
+        "#545a6b",
+        "#141419"
+      ],
+      "creature": "Un corazón de fruta madura cuelga de una rama, atravesado por tres espadas mientras tres pájaros negros se alejan volando.",
+      "keywordsUp": [
+        "dolor",
+        "ruptura",
+        "verdad que duele"
+      ],
+      "keywordsRev": [
+        "sanación en curso",
+        "perdón",
+        "liberación del dolor"
+      ],
+      "meaningUp": "Hay una herida real, y negarla no la cierra. Nombrar el dolor es el primer paso para que empiece a sanar.",
+      "meaningRev": "El dolor empieza a perder filo. Todavía se siente, pero ya no gobierna cada decisión."
+    },
+    {
+      "id": 53,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "4",
+      "name": "4 de Espadas",
+      "boschName": "El Sueño bajo las Cuatro Espadas",
+      "palette": [
+        "#a8c0cc",
+        "#404d5e",
+        "#0e141a"
+      ],
+      "creature": "Una figura yace inmóvil sobre una losa de piedra, con tres espadas clavadas alrededor y una cuarta apoyada sobre el pecho como una manta.",
+      "keywordsUp": [
+        "descanso",
+        "retiro",
+        "recuperación necesaria"
+      ],
+      "keywordsRev": [
+        "descanso interrumpido",
+        "agotamiento acumulado",
+        "negación del cansancio"
+      ],
+      "meaningUp": "El cuerpo y la mente piden pausa. Detenerse ahora no es rendirse, es reunir fuerzas para lo que sigue.",
+      "meaningRev": "El descanso se posterga demasiado, o se interrumpe antes de tiempo. El cuerpo cobrará esa deuda tarde o temprano."
+    },
+    {
+      "id": 54,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "5",
+      "name": "5 de Espadas",
+      "boschName": "El Vencedor de Alas Rotas",
+      "palette": [
+        "#c9d3d9",
+        "#4a5560",
+        "#12151a"
+      ],
+      "creature": "Una criatura sostiene tres espadas ajenas con una sonrisa incómoda, mientras dos figuras se alejan con las alas caídas, dejando sus armas atrás.",
+      "keywordsUp": [
+        "conflicto",
+        "victoria a costa de algo",
+        "tensión sin resolver"
+      ],
+      "keywordsRev": [
+        "reconciliación posible",
+        "dejar atrás el orgullo",
+        "tregua"
+      ],
+      "meaningUp": "Ganar esta discusión puede costar más de lo que parece. Vale preguntarse qué se pierde en el camino de tener razón.",
+      "meaningRev": "Hay una oportunidad de bajar las armas y reparar el vínculo, si el orgullo lo permite."
+    },
+    {
+      "id": 55,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "6",
+      "name": "6 de Espadas",
+      "boschName": "La Barca hacia Aguas Tranquilas",
+      "palette": [
+        "#b3c4d9",
+        "#3d4a5e",
+        "#10141c"
+      ],
+      "creature": "Una barca hecha de cáscara de nuez lleva a una figura encogida y seis espadas clavadas en la proa, alejándose de una orilla tormentosa hacia aguas más calmas.",
+      "keywordsUp": [
+        "transición",
+        "alejarse de la dificultad",
+        "camino hacia la calma"
+      ],
+      "keywordsRev": [
+        "resistencia a soltar el pasado",
+        "transición estancada",
+        "mirar atrás"
+      ],
+      "meaningUp": "Se deja atrás una etapa difícil, aunque el viaje todavía cargue peso. La calma está más cerca de lo que parece.",
+      "meaningRev": "Algo impide zarpar del todo. Se sigue mirando hacia la orilla que se supone dejada atrás."
+    },
+    {
+      "id": 56,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "7",
+      "name": "7 de Espadas",
+      "boschName": "El Ladrón de Plumas de Plata",
+      "palette": [
+        "#d0d0d9",
+        "#545a6b",
+        "#141419"
+      ],
+      "creature": "Una figura sigilosa se aleja cargando cinco espadas robadas entre las alas plegadas, mirando hacia atrás con media sonrisa.",
+      "keywordsUp": [
+        "estrategia",
+        "sigilo",
+        "resolución poco convencional"
+      ],
+      "keywordsRev": [
+        "engaño descubierto",
+        "autosabotaje",
+        "deshonestidad"
+      ],
+      "meaningUp": "A veces la solución no es de frente. Un enfoque más discreto o estratégico puede ser necesario ahora.",
+      "meaningRev": "Una estrategia poco honesta empieza a mostrar sus costuras. Lo que se ocultaba sale a la luz."
+    },
+    {
+      "id": 57,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "8",
+      "name": "8 de Espadas",
+      "boschName": "La Atrapada entre Espadas Propias",
+      "palette": [
+        "#a8c0cc",
+        "#404d5e",
+        "#0e141a"
+      ],
+      "creature": "Una figura con los ojos vendados y las alas atadas está de pie rodeada de ocho espadas clavadas en círculo, aunque el espacio entre ellas para salir es más ancho de lo que parece.",
+      "keywordsUp": [
+        "restricción autoimpuesta",
+        "sensación de atrapamiento",
+        "creencias limitantes"
+      ],
+      "keywordsRev": [
+        "liberación",
+        "romper el patrón mental limitante",
+        "salida posible"
+      ],
+      "meaningUp": "La trampa se siente real, pero buena parte de sus barrotes son mentales. Hay más margen de movimiento del que se percibe.",
+      "meaningRev": "Empieza a caer la venda. Lo que parecía imposible de resolver muestra, por fin, una salida."
+    },
+    {
+      "id": 58,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "9",
+      "name": "9 de Espadas",
+      "boschName": "La Vigilia de las Nueve Espadas",
+      "palette": [
+        "#c9d3d9",
+        "#4a5560",
+        "#12151a"
+      ],
+      "creature": "Una criatura se sienta en la cama con las manos en el rostro, mientras nueve espadas cuelgan sobre ella como una guirnalda amenazante que en realidad es de utilería.",
+      "keywordsUp": [
+        "angustia",
+        "insomnio",
+        "pensamientos catastróficos"
+      ],
+      "keywordsRev": [
+        "alivio tras la tormenta",
+        "pedir ayuda",
+        "perspectiva recuperada"
+      ],
+      "meaningUp": "La mente magnifica el peligro en la oscuridad. Rara vez las cosas son tan terribles como se ven a las tres de la mañana.",
+      "meaningRev": "Empieza a bajar la ansiedad, sobre todo si se comparte el peso con alguien más en vez de cargarlo en soledad."
+    },
+    {
+      "id": 59,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "10",
+      "name": "10 de Espadas",
+      "boschName": "El Fin bajo Cielo Rojo",
+      "palette": [
+        "#b3c4d9",
+        "#3d4a5e",
+        "#10141c"
+      ],
+      "creature": "Una figura yace boca abajo con diez espadas clavadas en la espalda, bajo un amanecer que, pese a todo, empieza a teñir el cielo de un rojo casi cálido.",
+      "keywordsUp": [
+        "final doloroso",
+        "tocar fondo",
+        "cierre definitivo"
+      ],
+      "keywordsRev": [
+        "recuperación lenta",
+        "lo peor ya pasó",
+        "nuevo comienzo tras el quiebre"
+      ],
+      "meaningUp": "Algo termina de forma abrupta y dolorosa. No hay forma de darle vuelta; solo queda aceptar que ya pasó.",
+      "meaningRev": "Después del quiebre, empieza — muy despacio — la reconstrucción. Lo peor ya sucedió."
+    },
+    {
+      "id": 60,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "Sota",
+      "name": "Sota de Espadas",
+      "boschName": "El Paje de Ojo Alerta",
+      "palette": [
+        "#d0d0d9",
+        "#545a6b",
+        "#141419"
+      ],
+      "creature": "Un joven de orejas puntiagudas sostiene su espada en guardia, girando la cabeza a cada sonido del viento entre las hojas.",
+      "keywordsUp": [
+        "curiosidad afilada",
+        "vigilancia",
+        "mente inquieta"
+      ],
+      "keywordsRev": [
+        "chismes",
+        "información mal usada",
+        "precipitación al hablar"
+      ],
+      "meaningUp": "Llega información nueva, o una pregunta que exige investigar más. Mantener la mente alerta ayuda a no perder detalles.",
+      "meaningRev": "La lengua se adelanta al pensamiento. Vale medir qué se dice y a quién antes de que la palabra corte de más."
+    },
+    {
+      "id": 61,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "Caballero",
+      "name": "Caballero de Espadas",
+      "boschName": "El Jinete de Viento Cortante",
+      "palette": [
+        "#a8c0cc",
+        "#404d5e",
+        "#0e141a"
+      ],
+      "creature": "Montado en una criatura de cuernos afilados y crin como cuchillas, un jinete avanza a toda velocidad, con la espada en alto, cortando el aire.",
+      "keywordsUp": [
+        "determinación",
+        "avance rápido",
+        "confrontación directa"
+      ],
+      "keywordsRev": [
+        "imprudencia",
+        "agresividad",
+        "avanzar sin medir consecuencias"
+      ],
+      "meaningUp": "Hace falta actuar con decisión y sin titubeos. El momento pide ir directo al punto, sin desviarse.",
+      "meaningRev": "La velocidad se vuelve descontrol. Ir tan rápido sin frenos puede herir a quien se cruce en el camino, incluido uno mismo."
+    },
+    {
+      "id": 62,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "Reina",
+      "name": "Reina de Espadas",
+      "boschName": "La Reina de Mirada Directa",
+      "palette": [
+        "#c9d3d9",
+        "#4a5560",
+        "#12151a"
+      ],
+      "creature": "Sentada en un trono de ramas secas, sostiene su espada en vertical, con la mirada fija y sin adorno alguno que la distraiga de lo esencial.",
+      "keywordsUp": [
+        "claridad cortante",
+        "independencia",
+        "honestidad"
+      ],
+      "keywordsRev": [
+        "frialdad excesiva",
+        "dureza que aísla",
+        "distancia emocional"
+      ],
+      "meaningUp": "Ver las cosas tal cual son, sin filtros ni excusas, se vuelve una fortaleza. La honestidad directa, aunque incómoda, ordena.",
+      "meaningRev": "La franqueza se vuelve un muro. A veces decir la verdad completa no es lo mismo que decirla con cuidado."
+    },
+    {
+      "id": 63,
+      "arcana": "minor",
+      "suit": "espadas",
+      "number": "Rey",
+      "name": "Rey de Espadas",
+      "boschName": "El Rey del Juicio Sereno",
+      "palette": [
+        "#b3c4d9",
+        "#3d4a5e",
+        "#10141c"
+      ],
+      "creature": "Sentado en un trono de piedra tallada con nubes, un rey de mirada firme sostiene su espada apoyada, como quien ya no necesita blandirla para hacerse respetar.",
+      "keywordsUp": [
+        "autoridad intelectual",
+        "juicio justo",
+        "claridad de mando"
+      ],
+      "keywordsRev": [
+        "rigidez",
+        "frialdad autoritaria",
+        "manipulación mediante la lógica"
+      ],
+      "meaningUp": "Se necesita una decisión objetiva, basada en hechos más que en emociones. Este es un buen momento para ese tipo de claridad.",
+      "meaningRev": "La razón se usa para imponer en vez de para entender. El juicio, sin algo de calidez, se vuelve una condena."
+    },
+    {
+      "id": 64,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "As",
+      "name": "As de Oros",
+      "boschName": "La Semilla Dorada",
+      "palette": [
+        "#d9a63e",
+        "#7a5a2a",
+        "#1c1408"
+      ],
+      "creature": "De una grieta en la tierra oscura asoma una moneda redonda como una fruta recién nacida, brillando con un resplandor que atrae a un caracol curioso.",
+      "keywordsUp": [
+        "oportunidad material",
+        "nuevo comienzo práctico",
+        "abundancia potencial"
+      ],
+      "keywordsRev": [
+        "oportunidad perdida",
+        "avaricia",
+        "falta de planificación"
+      ],
+      "meaningUp": "Se presenta una posibilidad concreta — trabajo, recurso, proyecto — que vale la pena sembrar con cuidado.",
+      "meaningRev": "La oportunidad se deja pasar, o se persigue con demasiada ansiedad como para dejarla crecer bien."
+    },
+    {
+      "id": 65,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "2",
+      "name": "2 de Oros",
+      "boschName": "El Malabarista del Vergel",
+      "palette": [
+        "#e0b84a",
+        "#8a5f26",
+        "#1a1206"
+      ],
+      "creature": "Una criatura de cola prensil hace malabares con dos frutas doradas atadas por una cinta infinita, sin dejar caer ninguna pese al viento.",
+      "keywordsUp": [
+        "equilibrio",
+        "adaptabilidad",
+        "manejo de varios frentes"
+      ],
+      "keywordsRev": [
+        "sobrecarga",
+        "desorganización",
+        "prioridades confusas"
+      ],
+      "meaningUp": "Hay varias cosas para sostener a la vez, y por ahora se logra. La flexibilidad es la clave para no dejar caer nada.",
+      "meaningRev": "Demasiadas pelotas en el aire empiezan a chocar entre sí. Toca soltar alguna o reordenar prioridades."
+    },
+    {
+      "id": 66,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "3",
+      "name": "3 de Oros",
+      "boschName": "Los Constructores del Fruto",
+      "palette": [
+        "#c99b3a",
+        "#6b4f24",
+        "#181206"
+      ],
+      "creature": "Tres criaturas de manos de raíz trabajan juntas tallando una fruta gigante hasta darle forma de templo diminuto, cada una aportando un detalle distinto.",
+      "keywordsUp": [
+        "colaboración",
+        "maestría",
+        "trabajo en equipo"
+      ],
+      "keywordsRev": [
+        "desacuerdo en el equipo",
+        "falta de reconocimiento",
+        "roces de método"
+      ],
+      "meaningUp": "El trabajo conjunto, cuando cada quien aporta su parte, produce algo mejor que lo que cualquiera lograría solo.",
+      "meaningRev": "Hay fricción en la forma de trabajar juntos, o alguien siente que su aporte no se valora lo suficiente."
+    },
+    {
+      "id": 67,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "4",
+      "name": "4 de Oros",
+      "boschName": "El Guardián del Tesoro Propio",
+      "palette": [
+        "#e8c25a",
+        "#7a5320",
+        "#1a1408"
+      ],
+      "creature": "Una criatura acorazada abraza cuatro monedas doradas contra el pecho, con las patas hundidas en la tierra como si hubiera echado raíces por miedo a moverse.",
+      "keywordsUp": [
+        "seguridad",
+        "ahorro",
+        "control sobre lo material"
+      ],
+      "keywordsRev": [
+        "apego excesivo",
+        "miedo a perder",
+        "rigidez"
+      ],
+      "meaningUp": "Sostener y proteger lo construido tiene sentido en este momento. No hay nada de malo en resguardar lo propio.",
+      "meaningRev": "El control se vuelve puño cerrado. Aferrarse tanto a lo material puede terminar aislando de lo demás."
+    },
+    {
+      "id": 68,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "5",
+      "name": "5 de Oros",
+      "boschName": "Los que Pasan de Largo el Vitral",
+      "palette": [
+        "#d9a63e",
+        "#7a5a2a",
+        "#1c1408"
+      ],
+      "creature": "Dos figuras encorvadas y descalzas caminan bajo la nieve junto a un muro con una ventana dorada, sin ver la luz que sale de adentro.",
+      "keywordsUp": [
+        "dificultad económica",
+        "exclusión",
+        "sensación de carencia"
+      ],
+      "keywordsRev": [
+        "ayuda que llega",
+        "recuperación",
+        "fin de la escasez"
+      ],
+      "meaningUp": "Hay un momento de estrechez real, material o de pertenencia. Vale la pena mirar hacia la ventana antes de seguir de largo.",
+      "meaningRev": "Empieza a llegar ayuda, propia o ajena. Lo peor de la carencia queda atrás."
+    },
+    {
+      "id": 69,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "6",
+      "name": "6 de Oros",
+      "boschName": "El Reparto Justo",
+      "palette": [
+        "#e0b84a",
+        "#8a5f26",
+        "#1a1206"
+      ],
+      "creature": "Una figura con balanza en una mano deja caer monedas en las palmas extendidas de dos criaturas pequeñas, midiendo con cuidado que ninguna reciba de más ni de menos.",
+      "keywordsUp": [
+        "generosidad",
+        "intercambio equilibrado",
+        "dar y recibir"
+      ],
+      "keywordsRev": [
+        "dependencia",
+        "generosidad condicionada",
+        "desequilibrio de poder"
+      ],
+      "meaningUp": "Hay flujo sano entre dar y recibir. Compartir recursos, tiempo o conocimiento fortalece el vínculo.",
+      "meaningRev": "La generosidad viene con condiciones, o alguien depende demasiado de la ayuda de otro. Vale revisar el equilibrio."
+    },
+    {
+      "id": 70,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "7",
+      "name": "7 de Oros",
+      "boschName": "El Cultivador Paciente",
+      "palette": [
+        "#c99b3a",
+        "#6b4f24",
+        "#181206"
+      ],
+      "creature": "Apoyado en un bastón de rama, un jardinero con dedos de zarcillo observa siete frutas que cuelgan de una enredadera, evaluando si ya es hora de la cosecha.",
+      "keywordsUp": [
+        "paciencia",
+        "evaluación",
+        "inversión a largo plazo"
+      ],
+      "keywordsRev": [
+        "impaciencia",
+        "esfuerzo sin resultados visibles",
+        "frustración"
+      ],
+      "meaningUp": "El trabajo hecho necesita tiempo antes de dar sus frutos. Vale la pena hacer una pausa y evaluar el progreso con calma.",
+      "meaningRev": "La espera se hace larga y los resultados no llegan al ritmo esperado. Toca decidir si insistir o replantear el método."
+    },
+    {
+      "id": 71,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "8",
+      "name": "8 de Oros",
+      "boschName": "El Aprendiz de las Ocho Monedas",
+      "palette": [
+        "#e8c25a",
+        "#7a5320",
+        "#1a1408"
+      ],
+      "creature": "Una criatura joven talla con concentración una octava moneda idéntica a las siete anteriores, alineadas con precisión sobre un tronco.",
+      "keywordsUp": [
+        "dedicación",
+        "perfeccionamiento del oficio",
+        "disciplina"
+      ],
+      "keywordsRev": [
+        "trabajo mecánico sin propósito",
+        "perfeccionismo agotador",
+        "rutina vacía"
+      ],
+      "meaningUp": "La repetición cuidadosa de un oficio empieza a dar frutos visibles. El detalle y la práctica constante valen la pena.",
+      "meaningRev": "El trabajo se vuelve rutina vacía, o la exigencia de perfección agota más de lo que aporta."
+    },
+    {
+      "id": 72,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "9",
+      "name": "9 de Oros",
+      "boschName": "La Cosecha en Soledad Elegida",
+      "palette": [
+        "#d9a63e",
+        "#7a5a2a",
+        "#1c1408"
+      ],
+      "creature": "Entre una viña cargada de frutas doradas, una figura con un pájaro posado en el brazo camina sola, disfrutando del jardín que ella misma cultivó.",
+      "keywordsUp": [
+        "autosuficiencia",
+        "disfrute del logro propio",
+        "independencia"
+      ],
+      "keywordsRev": [
+        "aislamiento",
+        "soledad no elegida",
+        "dependencia del reconocimiento externo"
+      ],
+      "meaningUp": "Un logro propio se disfruta plenamente, sin necesitar validación externa. La independencia, aquí, se siente como calma.",
+      "meaningRev": "La soledad deja de ser elección y empieza a pesar. O el disfrute depende demasiado de que otros lo noten."
+    },
+    {
+      "id": 73,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "10",
+      "name": "10 de Oros",
+      "boschName": "El Legado del Huerto Viejo",
+      "palette": [
+        "#e0b84a",
+        "#8a5f26",
+        "#1a1206"
+      ],
+      "creature": "Bajo un árbol centenario cargado de monedas-fruto, varias generaciones de una misma criatura — cría, adulta, anciana — comparten la sombra y la cosecha.",
+      "keywordsUp": [
+        "legado",
+        "abundancia compartida",
+        "estabilidad a largo plazo"
+      ],
+      "keywordsRev": [
+        "conflictos de herencia",
+        "tradición que pesa",
+        "inestabilidad familiar"
+      ],
+      "meaningUp": "Lo construido trasciende a quien lo construyó. Hay una sensación de arraigo y de algo que se sostiene en el tiempo.",
+      "meaningRev": "El legado trae también tensiones — sobre quién hereda qué, o sobre tradiciones que ya no encajan con quienes vienen."
+    },
+    {
+      "id": 74,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "Sota",
+      "name": "Sota de Oros",
+      "boschName": "El Paje del Brote Nuevo",
+      "palette": [
+        "#c99b3a",
+        "#6b4f24",
+        "#181206"
+      ],
+      "creature": "Un joven de manos verdes examina una moneda recién brotada de la tierra con la curiosidad de quien descubre algo por primera vez.",
+      "keywordsUp": [
+        "nuevas oportunidades",
+        "estudio",
+        "comienzo práctico"
+      ],
+      "keywordsRev": [
+        "falta de foco",
+        "oportunidad desperdiciada por indecisión",
+        "distracción"
+      ],
+      "meaningUp": "Se abre una posibilidad concreta de aprendizaje o trabajo. Vale la pena acercarse con la misma curiosidad genuina de esta carta.",
+      "meaningRev": "La oportunidad está ahí, pero falta compromiso real para tomarla en serio."
+    },
+    {
+      "id": 75,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "Caballero",
+      "name": "Caballero de Oros",
+      "boschName": "El Jinete de Paso Constante",
+      "palette": [
+        "#e8c25a",
+        "#7a5320",
+        "#1a1408"
+      ],
+      "creature": "Sobre una criatura de casco pesado y paso lento, un jinete avanza sin apuro, sosteniendo una moneda con ambas manos como quien no piensa soltarla nunca.",
+      "keywordsUp": [
+        "constancia",
+        "método",
+        "trabajo sostenido en el tiempo"
+      ],
+      "keywordsRev": [
+        "estancamiento",
+        "rutina sin propósito",
+        "terquedad"
+      ],
+      "meaningUp": "El progreso lento y constante rinde más que el impulso repentino. La perseverancia es la fuerza de esta carta.",
+      "meaningRev": "La rutina se vuelve estancamiento. Sostener el paso no debería significar dejar de preguntarse hacia dónde se va."
+    },
+    {
+      "id": 76,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "Reina",
+      "name": "Reina de Oros",
+      "boschName": "La Reina del Huerto Abundante",
+      "palette": [
+        "#d9a63e",
+        "#7a5a2a",
+        "#1c1408"
+      ],
+      "creature": "Sentada entre raíces y flores comestibles, sostiene una moneda como quien sostiene a una cría, con un conejo y un zorro descansando, ambos, a sus pies.",
+      "keywordsUp": [
+        "abundancia práctica",
+        "cuidado terrenal",
+        "generosidad concreta"
+      ],
+      "keywordsRev": [
+        "sobreexigencia material",
+        "descuido de sí misma por cuidar a otros",
+        "agotamiento silencioso"
+      ],
+      "meaningUp": "El cuidado se vuelve tangible — comida, recursos, tiempo puesto al servicio de otros sin perder los pies en la tierra.",
+      "meaningRev": "Tanto dar de comer al huerto ajeno deja el propio descuidado. Vale la pena guardar algo de esa abundancia para una misma."
+    },
+    {
+      "id": 77,
+      "arcana": "minor",
+      "suit": "oros",
+      "number": "Rey",
+      "name": "Rey de Oros",
+      "boschName": "El Rey del Fruto Maduro",
+      "palette": [
+        "#e0b84a",
+        "#8a5f26",
+        "#1a1206"
+      ],
+      "creature": "En un trono tallado en la raíz de un árbol enorme, un rey coronado de espigas sostiene una moneda enorme con la calma de quien ya no necesita demostrarle nada a nadie.",
+      "keywordsUp": [
+        "éxito material consolidado",
+        "generosidad estable",
+        "seguridad"
+      ],
+      "keywordsRev": [
+        "materialismo",
+        "avaricia",
+        "control excesivo sobre lo construido"
+      ],
+      "meaningUp": "El esfuerzo sostenido en el tiempo se convierte en una base sólida desde la cual también se puede dar a otros.",
+      "meaningRev": "Lo material empieza a pesar más que lo que representa. El control sobre lo construido se vuelve un fin en sí mismo."
     }
   ]
 }

@@ -3,10 +3,18 @@
    ============================================================ */
 
 const state = {
-  cards: [],
+  major: [],
+  minor: [],
+  suits: {},
+  deckMode: "major", // "major" (22) or "full" (78)
+  deckFilter: "all",  // "all" | "copas" | "bastos" | "espadas" | "oros"
   activeSpreadId: null,
   currentDraw: [] // { card, reversed, revealed }
 };
+
+function activeDeck() {
+  return state.deckMode === "full" ? state.major.concat(state.minor) : state.major;
+}
 
 const SPREADS = [
   {
@@ -179,7 +187,9 @@ async function loadCards() {
     const res = await fetch("cards.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
-    state.cards = data.majorArcana;
+    state.major = data.majorArcana || [];
+    state.minor = data.minorArcana || [];
+    state.suits = data.suits || {};
   } catch (err) {
     console.error("No se pudo cargar cards.json:", err);
     document.getElementById("load-error").hidden = false;
@@ -222,13 +232,68 @@ function initTabs() {
 function renderDeckGrid() {
   const grid = document.getElementById("deck-grid");
   grid.innerHTML = "";
-  state.cards.forEach(card => {
+
+  const groups = [];
+  if (state.deckFilter === "all" || state.deckFilter === "mayores") {
+    groups.push({ heading: "Los 22 Arcanos Mayores", cards: state.major });
+  }
+  ["copas", "bastos", "espadas", "oros"].forEach(suitKey => {
+    if (state.deckFilter !== "all" && state.deckFilter !== suitKey) return;
+    const suitCards = state.minor.filter(c => c.suit === suitKey);
+    if (!suitCards.length) return;
+    const meta = state.suits[suitKey];
+    const heading = meta ? `${meta.label} — ${meta.boschName}` : suitKey;
+    groups.push({ heading, cards: suitCards });
+  });
+
+  groups.forEach(group => {
+    const h3 = document.createElement("h3");
+    h3.className = "deck-group-heading";
+    h3.textContent = group.heading;
+    grid.appendChild(h3);
+
+    const row = document.createElement("div");
+    row.className = "deck-grid-row";
+    group.cards.forEach(card => {
+      const btn = document.createElement("button");
+      btn.className = "card";
+      btn.setAttribute("aria-label", `Ver ${card.name} — ${card.boschName}`);
+      btn.innerHTML = cardFaceMarkup(card, false);
+      btn.addEventListener("click", () => openModal(card, btn));
+      row.appendChild(btn);
+    });
+    grid.appendChild(row);
+  });
+}
+
+function initDeckFilters() {
+  const container = document.getElementById("deck-filters");
+  if (!container) return;
+  const options = [
+    { key: "all", label: "Todo el mazo" },
+    { key: "mayores", label: "Mayores" },
+    { key: "copas", label: "Copas" },
+    { key: "bastos", label: "Bastos" },
+    { key: "espadas", label: "Espadas" },
+    { key: "oros", label: "Oros" }
+  ];
+  container.setAttribute("role", "radiogroup");
+  container.setAttribute("aria-label", "Filtrar el mazo");
+  container.innerHTML = "";
+  options.forEach(opt => {
     const btn = document.createElement("button");
-    btn.className = "card";
-    btn.setAttribute("aria-label", `Ver ${card.name} — ${card.boschName}`);
-    btn.innerHTML = cardFaceMarkup(card, false);
-    btn.addEventListener("click", () => openModal(card, btn));
-    grid.appendChild(btn);
+    btn.className = "filter-chip";
+    btn.type = "button";
+    btn.textContent = opt.label;
+    btn.setAttribute("role", "radio");
+    btn.setAttribute("aria-checked", String(opt.key === state.deckFilter));
+    btn.addEventListener("click", () => {
+      state.deckFilter = opt.key;
+      container.querySelectorAll(".filter-chip").forEach(b => b.setAttribute("aria-checked", "false"));
+      btn.setAttribute("aria-checked", "true");
+      renderDeckGrid();
+    });
+    container.appendChild(btn);
   });
 }
 
@@ -256,13 +321,17 @@ function openModal(card, triggerEl = null) {
   modalTriggerEl = triggerEl || document.activeElement;
   const backdrop = document.getElementById("modal-backdrop");
   const body = document.getElementById("modal-body");
+  const suitMeta = card.suit ? state.suits[card.suit] : null;
+  const subtitle = suitMeta
+    ? `${escapeHTML(card.boschName)} · ${escapeHTML(suitMeta.label)}`
+    : escapeHTML(card.boschName);
   body.innerHTML = `
     <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
     <div class="modal-top">
       <div class="modal-art">${creatureSVG(card)}</div>
       <div>
-        <h2>${card.number} · ${escapeHTML(card.name)}</h2>
-        <p class="modal-sub">${escapeHTML(card.boschName)}</p>
+        <h2>${escapeHTML(card.number)} · ${escapeHTML(card.name)}</h2>
+        <p class="modal-sub">${subtitle}</p>
         <div>
           ${card.keywordsUp.map(k => `<span class="keyword-chip">${escapeHTML(k)}</span>`).join("")}
         </div>
@@ -369,7 +438,7 @@ function buildEmptySlots(id) {
 }
 
 function shuffledDeck() {
-  const arr = state.cards.slice();
+  const arr = activeDeck().slice();
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -452,14 +521,49 @@ function renderReadingNotes() {
   }
 }
 
+function initDeckModeToggle() {
+  const container = document.getElementById("deck-mode-select");
+  if (!container) return;
+  const options = [
+    { key: "major", label: "Arcanos Mayores", hint: "22 cartas — grandes fuerzas y encrucijadas de fondo." },
+    { key: "full", label: "Mazo Completo", hint: "78 cartas — incluye Copas, Bastos, Espadas y Oros, para lecturas más detalladas." }
+  ];
+  container.setAttribute("role", "radiogroup");
+  container.setAttribute("aria-label", "Tamaño del mazo");
+  container.innerHTML = "";
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "deck-mode-chip";
+    btn.type = "button";
+    btn.setAttribute("role", "radio");
+    btn.setAttribute("aria-checked", String(opt.key === state.deckMode));
+    btn.innerHTML = `<strong>${escapeHTML(opt.label)}</strong><span>${escapeHTML(opt.hint)}</span>`;
+    btn.addEventListener("click", () => {
+      if (state.deckMode === opt.key) return;
+      state.deckMode = opt.key;
+      container.querySelectorAll(".deck-mode-chip").forEach(b => b.setAttribute("aria-checked", "false"));
+      btn.setAttribute("aria-checked", "true");
+      // Reset current spread selection since the pool changed
+      document.getElementById("draw-btn").disabled = true;
+      document.getElementById("spread-table").innerHTML = "";
+      document.getElementById("reading-notes").innerHTML = "";
+      document.querySelectorAll(".spread-card").forEach(b => b.setAttribute("aria-checked", "false"));
+      state.activeSpreadId = null;
+    });
+    container.appendChild(btn);
+  });
+}
+
 /* ---------------- Init ---------------- */
 
 async function init() {
   await loadCards();
-  if (!state.cards.length) return;
+  if (!state.major.length) return;
   initTabs();
+  initDeckFilters();
   renderDeckGrid();
   initSpreadSelector();
+  initDeckModeToggle();
 
   document.getElementById("draw-btn").addEventListener("click", drawSpread);
   document.getElementById("modal-backdrop").addEventListener("click", e => {
