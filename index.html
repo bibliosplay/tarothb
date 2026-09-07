@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarot del Jardín de las Delicias</title>
+<meta name="description" content="Mazo de tarot interactivo inspirado en las criaturas de Hieronymus Bosch, con manual y tres tipos de tirada.">
+<meta name="theme-color" content="#14100c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314100c'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23d9a63e' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23d9a63e'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+<header class="site-header">
+  <h1 class="site-title">Tarot del Jardín de las Delicias</h1>
+  <p class="site-subtitle">Veintidós criaturas nacidas a la sombra de Hieronymus Bosch, para leer lo que el día trae escondido.</p>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Secciones">
+  <button id="tab-manual" class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-manual" data-panel="panel-manual" tabindex="0">Manual</button>
+  <button id="tab-mazo" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-mazo" data-panel="panel-mazo" tabindex="-1">El Mazo</button>
+  <button id="tab-tirada" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-tirada" data-panel="panel-tirada" tabindex="-1">Hacer una Tirada</button>
+</nav>
+
+<main id="main-content">
+  <p id="load-error" hidden style="color:#f0b7a4; border:1px solid rgba(201,79,47,.4); padding:1rem; border-radius:3px;">
+    No se pudieron cargar las cartas desde <code>cards.json</code>. Si abriste este archivo con doble clic, algunos navegadores bloquean la lectura de archivos locales: probá abrirlo con un servidor local (por ejemplo <code>python -m http.server</code> en esta carpeta) o con la extensión "Live Server".
+  </p>
+
+  <!-- ===================== MANUAL ===================== -->
+  <section id="panel-manual" class="panel is-active" role="tabpanel" aria-labelledby="tab-manual manual-heading" tabindex="0">
+    <h2 class="section-heading" id="manual-heading">Manual del mazo</h2>
+    <p class="section-lede">Este mazo reinterpreta los 22 Arcanos Mayores como criaturas de un jardín imaginario, imposible y un poco perturbador, en la tradición visual del Bosco. No es un mazo tradicional de 78 cartas: se concentra en los Arcanos Mayores, los que hablan de fuerzas grandes y lecciones de fondo.</p>
+
+    <div class="manual-grid">
+      <details class="manual-item" open>
+        <summary>¿Qué son los Arcanos Mayores?</summary>
+        <div class="manual-body">
+          <p>Son 22 cartas numeradas del 0 al 21 que representan arquetipos: etapas, fuerzas y encrucijadas que atraviesa cualquier vida — el comienzo, la elección, la caída, la sanación, el cierre de un ciclo. Cada una tiene, además del nombre clásico del tarot, un nombre bosquiano y una criatura propia que la ilustra.</p>
+        </div>
+      </details>
+
+      <details class="manual-item">
+        <summary>Al derecho e invertida</summary>
+        <div class="manual-body">
+          <p>Cuando sacás una carta, puede salir <strong>al derecho</strong> o <strong>invertida</strong> (dada vuelta). No es un accidente de la baraja física, es parte de la lectura:</p>
+          <ul>
+            <li><strong>Al derecho:</strong> la energía de la carta actúa de forma más directa y disponible.</li>
+            <li><strong>Invertida:</strong> la misma energía aparece bloqueada, exagerada, interna o pidiendo atención antes de expresarse con claridad.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="manual-item">
+        <summary>Cómo hacer una tirada</summary>
+        <div class="manual-body">
+          <p>En la pestaña <strong>Hacer una Tirada</strong>:</p>
+          <ul>
+            <li>Elegí uno de los tres tipos de tirada según lo que quieras explorar.</li>
+            <li>Si querés, escribí la pregunta o el tema que tenés en mente — es solo para vos, no se guarda en ningún lado.</li>
+            <li>Tocá "Mezclar y sacar cartas" para que el mazo elija por vos.</li>
+            <li>Tocá cada carta boca abajo para revelarla, una por una y en el orden que prefieras.</li>
+            <li>Leé el conjunto: las cartas conversan entre sí más de lo que dicen por separado.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="manual-item">
+        <summary>Cómo leer sin volverse loco</summary>
+        <div class="manual-body">
+          <p>Ninguna carta es una sentencia. Es un espejo con forma de pregunta: si la lectura te genera rechazo inmediato, esa reacción también es información. Tomá lo que resuene y dejá pasar lo que no. Este mazo es una herramienta de reflexión, no un método de predicción exacta ni un sustituto de asesoramiento profesional para decisiones importantes de salud, dinero o vínculos.</p>
+        </div>
+      </details>
+
+      <details class="manual-item">
+        <summary>Explorar el mazo completo</summary>
+        <div class="manual-body">
+          <p>En la pestaña <strong>El Mazo</strong> podés recorrer las 22 cartas libremente, tocar cualquiera para ver su criatura, su historia y sus dos significados — al derecho e invertida — sin necesidad de hacer una tirada.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== MAZO ===================== -->
+  <section id="panel-mazo" class="panel" role="tabpanel" aria-labelledby="tab-mazo mazo-heading" tabindex="0">
+    <h2 class="section-heading" id="mazo-heading">Las 22 criaturas</h2>
+    <p class="section-lede">Tocá cualquier carta para conocer su historia y sus dos lecturas posibles.</p>
+    <div class="deck-grid" id="deck-grid"></div>
+  </section>
+
+  <!-- ===================== TIRADA ===================== -->
+  <section id="panel-tirada" class="panel" role="tabpanel" aria-labelledby="tab-tirada tirada-heading" tabindex="0">
+    <h2 class="section-heading" id="tirada-heading">Elegí una tirada</h2>
+    <p class="section-lede">Cada tirada sirve para un tipo distinto de pregunta.</p>
+
+    <div class="spread-select" id="spread-select"></div>
+
+    <div class="spread-question">
+      <label for="question-input">Tu pregunta o intención (opcional)</label>
+      <input type="text" id="question-input" placeholder="¿Qué necesito ver sobre…?">
+    </div>
+
+    <div class="spread-actions">
+      <button class="btn" id="draw-btn" disabled>Mezclar y sacar cartas</button>
+    </div>
+
+    <div class="spread-table" id="spread-table"></div>
+    <div class="reading-notes" id="reading-notes" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer>
+  Tarot del Jardín de las Delicias — un mazo original inspirado en el imaginario de Hieronymus Bosch. Uso reflexivo y de entretenimiento, no sustituye asesoramiento profesional.
+</footer>
+
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-label="Detalle de la carta">
+  <div class="modal" id="modal-body"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
