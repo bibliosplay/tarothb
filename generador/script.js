@@ -377,36 +377,48 @@ function updateGenerateDisabled() {
 /* ---------------- Generación y render ---------------- */
 
 function renderItems() {
-  const results = document.getElementById("results");
-  results.innerHTML = "";
-  results.dataset.stale = "false";
+  const grid = document.getElementById("card-grid");
+  const notebook = document.getElementById("notebook");
+  grid.innerHTML = "";
+  notebook.innerHTML = "";
+  grid.dataset.stale = "false";
 
   state.items.forEach((item, i) => {
-    results.appendChild(buildCardElement(item, i));
+    grid.appendChild(buildCleanCard(item, i));
+    notebook.appendChild(buildNotebookEntry(item, i));
   });
 
   updateOutputButtons();
-  setStatus(`${state.items.length} cartas generadas con conceptos nuevos${state.painterId === "bosch" ? " (mazo original del Jardín de las Delicias)" : ""}.`);
+  setStatus(`${state.items.length} cartas generadas con conceptos nuevos${state.painterId === "bosch" ? " (mazo original del Jardín de las Delicias)" : ""}. Las intenciones completas están abajo, en el Cuaderno.`);
 }
 
-function buildCardElement(item, i) {
+function buildCleanCard(item, i) {
   const article = document.createElement("article");
-  article.className = "prompt-card";
+  article.className = "card-mini";
   article.innerHTML = `
-    <h3>
-      <span class="pn">${escapeText(item.def.canon)}</span>
-      <span class="nn">«${escapeText(item.name)}»</span>
-    </h3>
-    <p class="keywords">${keywordChips(item.up, item.rev)}</p>
-    <textarea class="prompt-text" readonly aria-label="Prompt para ${escapeText(item.name)}"></textarea>
-    <div class="card-foot">
-      <div class="card-foot-tools">
-        ${item.fixed ? "" : `<button class="regen-one" data-i="${i}" type="button">Otra versión</button>`}
-        <button class="copy-one" data-i="${i}" type="button">Copiar prompt</button>
-      </div>
+    <div class="cm-top">${escapeText(item.def.canon)}</div>
+    <div class="cm-mid">✦</div>
+    <div class="cm-bottom">«${escapeText(item.name)}»</div>
+    <div class="cm-tools">
+      ${item.fixed ? "" : `<button class="regen-one" data-i="${i}" type="button" title="Otra versión de esta carta">↻ Otra versión</button>`}
     </div>
   `;
-  article.querySelector(".prompt-text").value = buildPrompt(item);
+  return article;
+}
+
+function buildNotebookEntry(item, i) {
+  const article = document.createElement("article");
+  article.className = "prompt-card nb-entry";
+  article.innerHTML = `
+    <span class="nb-label">Intención de la carta</span>
+    <h3><span class="pn">${escapeText(item.def.canon)}</span> <span class="nn">«${escapeText(item.name)}»</span></h3>
+    <p class="keywords">${keywordChips(item.up, item.rev)}</p>
+    <pre class="nb-text"></pre>
+    <div class="card-foot-tools">
+      <button class="copy-one" data-i="${i}" type="button">Copiar esta intención</button>
+    </div>
+  `;
+  article.querySelector(".nb-text").textContent = buildPrompt(item);
   return article;
 }
 
@@ -423,10 +435,12 @@ function regenerateItem(i) {
   if (state.styleKey !== currentStyleKey()) return;
   state.items[i] = composeItem(state.items[i].def);
 
-  const results = document.getElementById("results");
-  const article = buildCardElement(state.items[i], i);
-  const all = Array.from(results.querySelectorAll(".prompt-card"));
-  if (all[i]) all[i].replaceWith(article);
+  const cardGrid = document.getElementById("card-grid");
+  const notebook = document.getElementById("notebook");
+  const cards = Array.from(cardGrid.querySelectorAll(".card-mini"));
+  const entries = Array.from(notebook.querySelectorAll(".nb-entry"));
+  if (cards[i]) cards[i].replaceWith(buildCleanCard(state.items[i], i));
+  if (entries[i]) entries[i].replaceWith(buildNotebookEntry(state.items[i], i));
 }
 
 function markStale() {
@@ -434,9 +448,9 @@ function markStale() {
   state.styleKey = null;
   state.items = [];
   updateOutputButtons();
-  const results = document.getElementById("results");
-  if (results.children.length) {
-    results.dataset.stale = "true";
+  const grid = document.getElementById("card-grid");
+  if (grid.children.length) {
+    grid.dataset.stale = "true";
     setStatus("El estilo cambió — volvé a pulsar «Generar las 22 cartas».");
   }
 }
@@ -488,12 +502,13 @@ function setStatus(msg) {
 }
 
 function initActions() {
-  const results = document.getElementById("results");
+  const cardGrid = document.getElementById("card-grid");
+  const notebook = document.getElementById("notebook");
 
-  results.addEventListener("click", async e => {
+  const onClick = async e => {
     const copyBtn = e.target.closest(".copy-one");
     if (copyBtn) {
-      if (results.dataset.stale === "true") {
+      if (cardGrid.dataset.stale === "true") {
         setStatus("Primero regenerá: el estilo cambió.");
         return;
       }
@@ -505,7 +520,10 @@ function initActions() {
     }
     const regenBtn = e.target.closest(".regen-one");
     if (regenBtn) regenerateItem(parseInt(regenBtn.dataset.i, 10));
-  });
+  };
+
+  cardGrid.addEventListener("click", onClick);
+  notebook.addEventListener("click", onClick);
 
   document.getElementById("variate-btn").addEventListener("click", () => {
     state.items = ARCANA.map(def => composeItem(def));
@@ -517,7 +535,7 @@ function initActions() {
       .map(item => `=== ${item.def.canon} — «${item.name}» ===\n${buildPrompt(item)}`)
       .join("\n\n");
     const ok = await copyText(all);
-    setStatus(ok ? `${state.items.length} prompts copiados.` : "No se pudo copiar automáticamente: usá «Descargar .txt».");
+    setStatus(ok ? `${state.items.length} intenciones copiadas al portapapeles.` : "No se pudo copiar automáticamente: usá «Descargar .txt».");
   });
 
   document.getElementById("download-btn").addEventListener("click", () => {
@@ -525,7 +543,7 @@ function initActions() {
     const p = profileOf();
     const label = state.painterId === "custom" ? (state.custom.trim() || "personalizado") : p.name;
     const head = [
-      "Tarot del Jardín de las Delicias — Cartas nuevas por pintor",
+      "Tarot del Jardín de las Delicias — Cuaderno de intenciones",
       `Estilo: ${label}`,
       agentNote(),
       ""
@@ -537,12 +555,12 @@ function initActions() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `cartas_estilo_${label.toLowerCase().replace(/[^a-z0-9]+/g, "_")}.txt`;
+    a.download = `cuaderno_estilo_${label.toLowerCase().replace(/[^a-z0-9]+/g, "_")}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    setStatus("Archivo .txt descargado.");
+    setStatus("Archivo .txt del Cuaderno descargado.");
   });
 }
 
