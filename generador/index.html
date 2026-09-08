@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creador de Prompts — Tarot del Jardín de las Delicias</title>
+<meta name="description" content="Genera prompts listos para pintar los 22 Arcanos Mayores del Tarot del Jardín de las Delicias al estilo de cualquier pintor o técnica pictórica, para usar en Midjourney, DALL·E o Stable Diffusion.">
+<meta name="theme-color" content="#14100c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314100c'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23d9a63e' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23d9a63e'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+<header class="site-header">
+  <h1 class="site-title">Creador de Prompts</h1>
+  <p class="site-subtitle">Los 22 Arcanos Mayores del Tarot del Jardín de las Delicias, reinterpretados al estilo de cualquier pintor: elegí un estilo, y este generador escribe los prompts listos para copiar en Midjourney, DALL·E o Stable Diffusion.</p>
+</header>
+
+<main id="main-content">
+  <p id="load-error" hidden style="color:#f0b7a4; border:1px solid rgba(201,79,47,.4); padding:1rem; border-radius:3px;">
+    No se pudo cargar <code>cards.json</code>. Si abriste este archivo con doble clic, algunos navegadores bloquean la lectura local: usá un servidor local (<code>python -m http.server</code>) o "Live Server".
+  </p>
+
+  <!-- ===================== PASO 1: ESTILO ===================== -->
+  <section class="panel-section" aria-labelledby="h-estilo">
+    <h2 class="section-heading" id="h-estilo">1 · Elegí un pintor o estilo</h2>
+    <p class="section-lede">Cada estilo impregna los 22 prompts con la paleta, la técnica pictórica y la atmósfera de ese artista, manteniendo la criatura y el símbolo de cada carta.</p>
+
+    <div class="painter-select" id="painter-select" role="radiogroup" aria-label="Estilos pictóricos"></div>
+
+    <div class="custom-style" id="custom-style" hidden>
+      <label for="custom-input">Pintor o técnica personalizada</label>
+      <input type="text" id="custom-input" placeholder="Ej.: Edvard Munch, óleo barroco, acuarela japonesa…" autocomplete="off">
+      <p class="hint">El texto se integra a cada prompt como «en la estética, paleta y técnica de …».</p>
+    </div>
+  </section>
+
+  <!-- ===================== PASO 2: GENERAR ===================== -->
+  <section class="panel-section" aria-labelledby="h-generar">
+    <h2 class="section-heading" id="h-generar">2 · Generar los prompts</h2>
+    <p class="section-lede">Se crean 22 prompts, uno por Arcano Mayor. Cada uno incluye la descripción de la criatura, las palabras clave y la paleta de la carta.</p>
+
+    <div class="actions">
+      <button class="btn" id="generate-btn" disabled>Generar prompts · Los 22 Arcanos</button>
+      <button class="btn secondary" id="copy-all-btn" disabled>Copiar todos</button>
+      <button class="btn secondary" id="download-btn" disabled>Descargar .txt</button>
+      <span class="status" id="status" role="status" aria-live="polite"></span>
+    </div>
+
+    <div class="results" id="results"></div>
+  </section>
+</main>
+
+<footer>
+  Creador de Prompts — complemento del Tarot del Jardín de las Delicias. Las imágenes generadas a partir de estos prompts son originales; no reproducen obras existentes.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
