@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Creador de Prompts — Tarot del Jardín de las Delicias</title>
-<meta name="description" content="Genera prompts listos para pintar los 22 Arcanos Mayores del Tarot del Jardín de las Delicias al estilo de cualquier pintor o técnica pictórica, para usar en Midjourney, DALL·E o Stable Diffusion.">
+<meta name="description" content="Crea 22 cartas de tarot con conceptos nuevos a partir de cada pintor: nombre, escena y claves propias por Arcano, listos para usar en Midjourney, DALL·E o Stable Diffusion.">
 <meta name="theme-color" content="#14100c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314100c'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23d9a63e' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23d9a63e'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
@@ -15,7 +15,7 @@
 
 <header class="site-header">
   <h1 class="site-title">Creador de Prompts</h1>
-  <p class="site-subtitle">Los 22 Arcanos Mayores del Tarot del Jardín de las Delicias, reinterpretados al estilo de cualquier pintor: elegí un estilo, y este generador escribe los prompts listos para copiar en Midjourney, DALL·E o Stable Diffusion.</p>
+  <p class="site-subtitle">Crea 22 cartas de tarot con <strong>conceptos nuevos</strong> a partir de cada pintor: elegí un artista (o dejá que te sugiera uno), y el generador inventa para cada Arcano un nombre, una escena y unas claves propias, listos para copiar en Midjourney, DALL·E o Stable Diffusion.</p>
 </header>
 
 <main id="main-content">
@@ -26,24 +26,30 @@
   <!-- ===================== PASO 1: ESTILO ===================== -->
   <section class="panel-section" aria-labelledby="h-estilo">
     <h2 class="section-heading" id="h-estilo">1 · Elegí un pintor o estilo</h2>
-    <p class="section-lede">Cada estilo impregna los 22 prompts con la paleta, la técnica pictórica y la atmósfera de ese artista, manteniendo la criatura y el símbolo de cada carta.</p>
+    <p class="section-lede">Cada pintor tiene su propio mundo: los conceptos, nombres y escenas de las 22 cartas cambian para encajar en él. Podés elegir uno del menú, escribir el tuyo o dejarte sugerir.</p>
 
     <div class="painter-select" id="painter-select" role="radiogroup" aria-label="Estilos pictóricos"></div>
 
     <div class="custom-style" id="custom-style" hidden>
       <label for="custom-input">Pintor o técnica personalizada</label>
       <input type="text" id="custom-input" placeholder="Ej.: Edvard Munch, óleo barroco, acuarela japonesa…" autocomplete="off">
-      <p class="hint">El texto se integra a cada prompt como «en la estética, paleta y técnica de …».</p>
+      <p class="hint">Tu estilo define la técnica y la paleta; los conceptos usan una plantilla genérica ya que no conocemos el mundo de ese artista. Podés editar cada prompt después.</p>
+    </div>
+
+    <div class="suggest-row">
+      <button class="btn secondary" id="suggest-btn" type="button">Sugerirme un pintor</button>
+      <span class="active-style" id="active-style" aria-live="polite"></span>
     </div>
   </section>
 
   <!-- ===================== PASO 2: GENERAR ===================== -->
   <section class="panel-section" aria-labelledby="h-generar">
-    <h2 class="section-heading" id="h-generar">2 · Generar los prompts</h2>
-    <p class="section-lede">Se crean 22 prompts, uno por Arcano Mayor. Cada uno incluye la descripción de la criatura, las palabras clave y la paleta de la carta.</p>
+    <h2 class="section-heading" id="h-generar">2 · Generar las cartas</h2>
+    <p class="section-lede">Se crean 22 cartas nuevas: para cada Arcano se inventa un nombre, una escena y unas claves en el mundo del pintor elegido. Usá «Nueva variación» para mezclar los elementos y conseguir otras versiones.</p>
 
     <div class="actions">
-      <button class="btn" id="generate-btn" disabled>Generar prompts · Los 22 Arcanos</button>
+      <button class="btn" id="generate-btn" disabled>Generar las 22 cartas</button>
+      <button class="btn secondary" id="variate-btn" disabled>Nueva variación</button>
       <button class="btn secondary" id="copy-all-btn" disabled>Copiar todos</button>
       <button class="btn secondary" id="download-btn" disabled>Descargar .txt</button>
       <span class="status" id="status" role="status" aria-live="polite"></span>
