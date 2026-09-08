@@ -9,7 +9,7 @@ Sitio 100% estático, sin frameworks ni build step: HTML, CSS y JavaScript vanil
 - **Manual** — explica qué son los Arcanos Mayores y Menores, el sentido de las cartas invertidas y cómo leer una tirada.
 - **El Mazo** — las 78 cartas navegables con filtro por palo (Mayores / Copas / Bastos / Espadas / Oros), cada una con su criatura, historia y significado al derecho / invertida.
 - **Hacer una Tirada** — elegí entre tirar solo con los 22 Arcanos Mayores o con el mazo completo de 78 cartas, y luego entre tres tipos de tirada (1, 3 y 5 cartas), con mezcla aleatoria, revelado carta por carta y notas de lectura generadas al vuelo.
-- Arte de las criaturas generado proceduralmente por carta (semilla determinística por `id`), sin imágenes externas.
+- Arte de las criaturas: los 22 Arcanos Mayores usan las ilustraciones reales de `images/{id}.jpg` (id 0–21); los Arcanos Menores se generan proceduralmente en SVG (semilla determinística por `id`). Si falta cualquier imagen, el sitio vuelve automáticamente al arte SVG procedural.
 - Accesible: navegación de pestañas con teclado (flechas / Home / End) siguiendo el patrón ARIA de tablist, modal con foco atrapado y devuelto al cerrarse, `aria-live` en los resultados de lectura, `prefers-reduced-motion` respetado.
 
 ## 🃏 Los cuatro palos
@@ -29,8 +29,13 @@ Sitio 100% estático, sin frameworks ni build step: HTML, CSS y JavaScript vanil
 ├── style.css       # Estilos, tema visual y layouts responsivos
 ├── script.js       # Lógica: pestañas, mazo, tiradas, modal, arte SVG procedural
 ├── cards.json      # Datos de las 78 cartas (mayores + menores) y metadatos de palos
+├── images/         # Ilustraciones de los 22 Arcanos Mayores, una por carta (images/0.jpg … images/21.jpg)
 └── README.md
 ```
+
+## 🖼️ Imágenes de los Arcanos Mayores
+
+La carpeta `images/` contiene una ilustración por cada Arcano Mayor, con el nombre `{id}.jpg` donde `id` coincide con el campo `id` de la carta (0–21, el mismo que determina la semilla del arte procedural). Las imágenes se muestran en el mazo, en las tiradas y en el modal de detalle, con `loading="lazy"` para no cargar las 22 (~25 MB) de una sola vez. Si un archivo falta o está roto, la carta vuelve al arte SVG procedural de `script.js → creatureSVG`, así que el sitio nunca queda con un hueco.
 
 No hay dependencias de build. La única dependencia externa es la tipografía (Google Fonts, `Cinzel` + `Crimson Text`) importada por CDN en `style.css`.
 

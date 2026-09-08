@@ -173,6 +173,34 @@ function backGlyphSVG() {
   </svg>`;
 }
 
+// Los Arcanos Mayores se ilustran con imágenes reales en images/{id}.jpg
+// (0–21, coinciden con el id de la carta). Si el archivo falta o falla,
+// se vuelve al arte procedural SVG de creatureSVG().
+function majorImagePath(card) {
+  return card.arcana === "major" ? `images/${card.id}.jpg` : null;
+}
+
+function cardArtMarkup(card, alt = "") {
+  const src = majorImagePath(card);
+  if (!src) return creatureSVG(card);
+  const altAttr = alt ? `alt="${escapeAttr(alt)}"` : 'alt=""';
+  return `<img class="card-art-img" src="${escapeAttr(src)}" ${altAttr} loading="lazy" decoding="async" data-fallback="${card.id}">`;
+}
+
+function attachArtFallbacks(scope) {
+  scope.querySelectorAll("img[data-fallback]").forEach(img => {
+    const card = state.major.find(c => c.id === parseInt(img.dataset.fallback, 10));
+    if (!card) return;
+    img.addEventListener("error", () => {
+      const host = img.closest(".card-art, .modal-art");
+      if (host && !host.dataset.fallbackApplied) {
+        host.dataset.fallbackApplied = "1";
+        host.innerHTML = creatureSVG(card);
+      }
+    });
+  });
+}
+
 function escapeAttr(str) {
   return String(str).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 }
@@ -262,6 +290,7 @@ function renderDeckGrid() {
       btn.addEventListener("click", () => openModal(card, btn));
       row.appendChild(btn);
     });
+    attachArtFallbacks(row);
     grid.appendChild(row);
   });
 }
@@ -304,7 +333,7 @@ function cardFaceMarkup(card, reversed) {
         <span class="glyph">${backGlyphSVG()}</span>
       </span>
       <span class="card-face card-front">
-        <span class="card-art">${creatureSVG(card)}</span>
+        <span class="card-art">${cardArtMarkup(card)}</span>
         <span class="card-label">
           <span class="card-number">${card.number}${reversed ? " · invertida" : ""}</span>
           <span class="card-name">${escapeHTML(card.boschName)}</span>
@@ -328,7 +357,7 @@ function openModal(card, triggerEl = null) {
   body.innerHTML = `
     <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
     <div class="modal-top">
-      <div class="modal-art">${creatureSVG(card)}</div>
+      <div class="modal-art">${cardArtMarkup(card, `Ilustración de ${card.boschName}`)}</div>
       <div>
         <h2>${escapeHTML(card.number)} · ${escapeHTML(card.name)}</h2>
         <p class="modal-sub">${subtitle}</p>
@@ -350,6 +379,7 @@ function openModal(card, triggerEl = null) {
   backdrop.classList.add("is-open");
   document.getElementById("modal-close").addEventListener("click", closeModal);
   document.body.style.overflow = "hidden";
+  attachArtFallbacks(body);
   document.getElementById("modal-close").focus();
   document.addEventListener("keydown", trapModalFocus);
 }
@@ -468,6 +498,7 @@ function drawSpread() {
     cardBtn.className = "card";
     cardBtn.setAttribute("aria-label", `Revelar carta: ${slot.label}`);
     cardBtn.innerHTML = cardFaceMarkup(draw.card, draw.reversed);
+    attachArtFallbacks(cardBtn);
 
     cardBtn.addEventListener("click", () => {
       if (draw.revealed) {
@@ -488,18 +519,29 @@ function drawSpread() {
     table.appendChild(wrap);
   });
 
-  document.getElementById("reading-notes").innerHTML = `<p class="section-lede" style="margin-top:0;">Toca cada carta para revelarla, en el orden que prefieras.</p>`;
+  const notesEl = document.getElementById("reading-notes");
+  notesEl.innerHTML = questionMarkup() +
+    `<p class="section-lede" style="margin-top:0;">Toca cada carta para revelarla, en el orden que prefieras.</p>`;
+
+  const firstCard = table.querySelector(".slot .card");
+  if (firstCard) firstCard.focus({ preventScroll: true });
+}
+
+function questionMarkup() {
+  const q = document.getElementById("question-input").value.trim();
+  return q ? `<p class="reading-question">Pregunta / intención: “${escapeHTML(q)}”</p>` : "";
 }
 
 function renderReadingNotes() {
   const spread = SPREADS.find(s => s.id === state.activeSpreadId);
   const notes = document.getElementById("reading-notes");
 
-  notes.innerHTML = "";
+  notes.innerHTML = questionMarkup();
   spread.slots.forEach((slot, i) => {
     const draw = state.currentDraw[i];
     if (!draw.revealed) return;
     const meaning = draw.reversed ? draw.card.meaningRev : draw.card.meaningUp;
+    const keywords = draw.reversed ? draw.card.keywordsRev : draw.card.keywordsUp;
 
     const div = document.createElement("div");
     div.className = "reading-card";
@@ -508,6 +550,7 @@ function renderReadingNotes() {
       <h4>${slot.label} — ${escapeHTML(draw.card.boschName)}</h4>
       <p class="rc-role">${escapeHTML(slot.role)}</p>
       <p>${escapeHTML(meaning)}</p>
+      <p class="rc-keywords">${keywords.map(k => `<span class="keyword-chip">${escapeHTML(k)}</span>`).join("")}</p>
     `;
     notes.appendChild(div);
   });
