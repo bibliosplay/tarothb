@@ -173,25 +173,37 @@ function backGlyphSVG() {
   </svg>`;
 }
 
-// Los Arcanos Mayores se ilustran con imágenes reales en images/{id}.jpg
-// (0–21, coinciden con el id de la carta). Si el archivo falta o falla,
+// Los Arcanos Mayores se ilustran con imágenes reales en images/{id}.{ext}
+// (id 0–21, coincide con el id de la carta). Se prueban varias extensiones
+// por si subiste .png, .jpeg o .webp en vez de .jpg. Si ninguna carga,
 // se vuelve al arte procedural SVG de creatureSVG().
-function majorImagePath(card) {
-  return card.arcana === "major" ? `images/${card.id}.jpg` : null;
+const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
+
+function majorImageCandidates(card) {
+  return card.arcana === "major"
+    ? IMAGE_EXTENSIONS.map(ext => `images/${card.id}.${ext}`)
+    : [];
 }
 
 function cardArtMarkup(card, alt = "") {
-  const src = majorImagePath(card);
-  if (!src) return creatureSVG(card);
+  const candidates = majorImageCandidates(card);
+  if (!candidates.length) return creatureSVG(card);
   const altAttr = alt ? `alt="${escapeAttr(alt)}"` : 'alt=""';
-  return `<img class="card-art-img" src="${escapeAttr(src)}" ${altAttr} loading="lazy" decoding="async" data-fallback="${card.id}">`;
+  return `<img class="card-art-img" src="${escapeAttr(candidates[0])}" ${altAttr} loading="lazy" decoding="async" data-fallback="${card.id}" data-try-index="0">`;
 }
 
 function attachArtFallbacks(scope) {
   scope.querySelectorAll("img[data-fallback]").forEach(img => {
     const card = state.major.find(c => c.id === parseInt(img.dataset.fallback, 10));
     if (!card) return;
+    const candidates = majorImageCandidates(card);
     img.addEventListener("error", () => {
+      const nextIndex = parseInt(img.dataset.tryIndex, 10) + 1;
+      if (nextIndex < candidates.length) {
+        img.dataset.tryIndex = String(nextIndex);
+        img.src = candidates[nextIndex];
+        return;
+      }
       const host = img.closest(".card-art, .modal-art");
       if (host && !host.dataset.fallbackApplied) {
         host.dataset.fallbackApplied = "1";
