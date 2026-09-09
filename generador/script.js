@@ -392,16 +392,13 @@ function renderItems() {
   setStatus(`${state.items.length} cartas generadas con conceptos nuevos${state.painterId === "bosch" ? " (mazo original del Jardín de las Delicias)" : ""}. Las intenciones completas están abajo, en el Cuaderno.`);
 }
 
-function buildCleanCard(item, i) {
+function buildCleanCard(item) {
   const article = document.createElement("article");
   article.className = "card-mini";
   article.innerHTML = `
     <div class="cm-top">${escapeText(item.def.canon)}</div>
-    <div class="cm-mid">✦</div>
+    <div class="cm-mid"></div>
     <div class="cm-bottom">«${escapeText(item.name)}»</div>
-    <div class="cm-tools">
-      ${item.fixed ? "" : `<button class="regen-one" data-i="${i}" type="button" title="Otra versión de esta carta">↻ Otra versión</button>`}
-    </div>
   `;
   return article;
 }
@@ -415,6 +412,7 @@ function buildNotebookEntry(item, i) {
     <p class="keywords">${keywordChips(item.up, item.rev)}</p>
     <pre class="nb-text"></pre>
     <div class="card-foot-tools">
+      ${item.fixed ? "" : `<button class="regen-one" data-i="${i}" type="button">Otra versión</button>`}
       <button class="copy-one" data-i="${i}" type="button">Copiar esta intención</button>
     </div>
   `;
@@ -439,7 +437,7 @@ function regenerateItem(i) {
   const notebook = document.getElementById("notebook");
   const cards = Array.from(cardGrid.querySelectorAll(".card-mini"));
   const entries = Array.from(notebook.querySelectorAll(".nb-entry"));
-  if (cards[i]) cards[i].replaceWith(buildCleanCard(state.items[i], i));
+  if (cards[i]) cards[i].replaceWith(buildCleanCard(state.items[i]));
   if (entries[i]) entries[i].replaceWith(buildNotebookEntry(state.items[i], i));
 }
 
