@@ -1,0 +1,87 @@
+.biblio-nav {
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.55rem 1.25rem;
+  background: rgba(12, 10, 18, 0.92);
+  border-bottom: 1px solid rgba(217, 166, 62, 0.35);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+.biblio-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: #e8d9a8;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.biblio-nav__marca {
+  font-size: 0.7rem;
+  line-height: 1;
+  color: #d9a63e;
+}
+
+.biblio-nav__nombre {
+  white-space: nowrap;
+}
+
+.biblio-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.4rem;
+}
+
+.biblio-nav__link {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  color: #cbbfa0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.biblio-nav__link:hover,
+.biblio-nav__link:focus-visible {
+  color: #f5ecd2;
+  border-color: rgba(217, 166, 62, 0.5);
+  background: rgba(217, 166, 62, 0.08);
+}
+
+.biblio-nav__link[aria-current="page"] {
+  color: #14100c;
+  background: #d9a63e;
+  border-color: #d9a63e;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: light) {
+  .biblio-nav {
+    background: rgba(248, 244, 235, 0.96);
+    border-bottom-color: rgba(140, 105, 35, 0.35);
+  }
+  .biblio-nav__brand,
+  .biblio-nav__link {
+    color: #3a2f15;
+  }
+  .biblio-nav__link:hover,
+  .biblio-nav__link:focus-visible {
+    color: #14100c;
+    border-color: rgba(140, 105, 35, 0.5);
+    background: rgba(140, 105, 35, 0.08);
+  }
+  .biblio-nav__link[aria-current="page"] {
+    color: #fdf8ea;
+    background: #8c6923;
+    border-color: #8c6923;
+  }
+}
